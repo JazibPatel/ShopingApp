@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ShopingApp.MVVM.View.HomePage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="HomePage">
+
+    <Grid RowDefinitions="50,*">
+        <Grid
+            Padding="10,20,10,10"
+            ColumnDefinitions="*,2*,*,*,*,*"
+            RowDefinitions="*"
+            VerticalOptions="Center">
+            <Image
+                Grid.Column="0"
+                HeightRequest="30"
+                HorizontalOptions="Start"
+                Source="menu.png" />
+
+            <Image
+                Grid.Column="2"
+                HeightRequest="30"
+                HorizontalOptions="Center"
+                Source="search.png" />
+
+            <Image
+                Grid.Column="3"
+                HeightRequest="30"
+                HorizontalOptions="Center"
+                Source="person.png" />
+
+            <Image
+                Grid.Column="4"
+                HeightRequest="30"
+                HorizontalOptions="Center"
+                Source="heart.png" />
+
+            <Image
+                Grid.Column="5"
+                HeightRequest="25"
+                HorizontalOptions="Center"
+                Source="bag.png" />
+
+        </Grid>
+
+
+        <ScrollView Grid.Row="1" Margin="0,15,0,0">
+            <Grid
+                Padding="15"
+                ColumnDefinitions="*"
+                RowDefinitions="*">
+
+                <Grid
+                    Margin="0,0,0,50"
+                    ColumnDefinitions="*"
+                    RowDefinitions="*,*,*,*,*,*,*,*,*,*">
+
+                    <Button
+                        Grid.Row="1"
+                        Margin="0,20,0,0"
+                        Background="#faf9f8"
+                        Text="Free shipping above Rs. 1999"
+                        TextColor="Black" />
+
+                    <Image
+                        Grid.Row="2"
+                        Margin="0,50,0,0"
+                        Source="hp1.jpg" />
+                    <Label
+                        Grid.Row="2"
+                        Padding="30,0,0,0"
+                        FontAttributes="Bold"
+                        FontSize="20"
+                        HorizontalOptions="Start"
+                        Text="New season"
+                        TextColor="White"
+                        VerticalOptions="Center" />
+
+                    <Label
+                        Grid.Row="2"
+                        Margin="0,60,0,0"
+                        Padding="30,0,0,0"
+                        FontAttributes="Bold"
+                        FontSize="20"
+                        HorizontalOptions="Start"
+                        Text="denim"
+                        TextColor="White"
+                        VerticalOptions="Center" />
+
+                    <Image
+                        Grid.Row="3"
+                        Margin="0,50,0,0"
+                        Source="hp2.jpg" />
+
+                    <Label
+                        Grid.Row="3"
+                        Margin="10,150,20,40"
+                        Padding="10"
+                        Background="Black"
+                        FontSize="15"
+                        HeightRequest="45"
+                        HorizontalOptions="End"
+                        Text="Rs. 5,999.00"
+                        TextColor="White"
+                        VerticalOptions="Center" />
+
+                    <Label
+                        Grid.Row="3"
+                        Margin="0,0,0,35"
+                        Padding="30,0,0,0"
+                        FontAttributes="Bold"
+                        FontSize="20"
+                        HorizontalOptions="Start"
+                        Text="Soft glamour"
+                        TextColor="White"
+                        VerticalOptions="End" />
+
+                    <Label
+                        Grid.Row="3"
+                        Margin="0,0,0,5"
+                        Padding="30,0,0,0"
+                        FontSize="15"
+                        HorizontalOptions="Start"
+                        Text="A modern tribute to iconic menswar."
+                        TextColor="White"
+                        VerticalOptions="End" />
+
+
+                    <Label
+                        Grid.Row="4"
+                        Margin="0,50,0,0"
+                        Padding="0,25,0,0"
+                        Background="#4b6870"
+                        FontAttributes="Bold"
+                        FontSize="20"
+                        HeightRequest="100"
+                        HorizontalOptions="Fill"
+                        HorizontalTextAlignment="Center"
+                        Text="Kids style spree: ₹799 onwords"
+                        TextColor="White"
+                        VerticalTextAlignment="Start" />
+
+                    <Label
+                        Grid.Row="4"
+                        Margin="0,15,0,0"
+                        FontSize="12"
+                        HeightRequest="90"
+                        HorizontalOptions="Fill"
+                        HorizontalTextAlignment="Center"
+                        Text="Give your little ones a wardrobe makeover."
+                        TextColor="White"
+                        VerticalTextAlignment="End" />
+
+                    <Label
+                        Grid.Row="5"
+                        Margin="0,50,0,0"
+                        FontAttributes="Bold"
+                        FontFamily=""
+                        FontSize="18"
+                        HorizontalTextAlignment="Start"
+                        Text="Best of All"
+                        VerticalTextAlignment="Center" />
+
+                    <CarouselView
+                        x:Name="HomeCarouse"
+                        Grid.Row="6"
+                        Margin="0,40,0,0"
+                        HeightRequest="300"
+                        ItemsSource="{Binding Product}"
+                        PeekAreaInsets="90">
+                        <CarouselView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid ColumnDefinitions="*" RowDefinitions="*,*,*">
+                                    <Image
+                                        Grid.Row="0"
+                                        Aspect="AspectFill"
+                                        Background="#e0e0e0"
+                                        HeightRequest="300"
+                                        HorizontalOptions="Center"
+                                        Source="{Binding ImageUrl}"
+                                        VerticalOptions="Center"
+                                        WidthRequest="150" />
+
+                                    <Label
+                                        Grid.Row="1"
+                                        Margin="25,90,0,0"
+                                        HeightRequest="60"
+                                        HorizontalTextAlignment="Start"
+                                        Text="{Binding Name}"
+                                        VerticalTextAlignment="End" />
+                                    <Label
+                                        Grid.Row="2"
+                                        Margin="25,5,0,0"
+                                        HeightRequest="50"
+                                        HorizontalTextAlignment="Start"
+                                        Text="{Binding Price, StringFormat='Rs. {0:F2}'}"
+                                        VerticalTextAlignment="Start" />
+                                </Grid>
+                            </DataTemplate>
+                        </CarouselView.ItemTemplate>
+                    </CarouselView>
+
+
+                    <Image Grid.Row="7" Source="hp3.png" />
+
+                    <Label
+                        Grid.Row="7"
+                        Margin="10,100,20,40"
+                        Padding="10"
+                        Background="Black"
+                        FontSize="15"
+                        HeightRequest="45"
+                        HorizontalOptions="End"
+                        Text="Rs. 799.00"
+                        TextColor="White"
+                        VerticalOptions="Center" />
+
+                    <Label
+                        Grid.Row="7"
+                        Margin="0,0,0,15"
+                        FontAttributes="Bold"
+                        FontFamily=""
+                        FontSize="20"
+                        HorizontalOptions="Center"
+                        Text="A fresh start"
+                        TextColor="Black"
+                        VerticalOptions="End" />
+
+                    <Image
+                        Grid.Row="8"
+                        Margin="0,50,0,0"
+                        Source="hp5.png" />
+
+                    <Label
+                        Grid.Row="8"
+                        FontAttributes="Bold"
+                        FontSize="20"
+                        HorizontalTextAlignment="Center"
+                        Text="The Best of JP Home from"
+                        TextColor="White"
+                        VerticalTextAlignment="Center" />
+
+                    <Label
+                        Grid.Row="8"
+                        Margin="0,60,0,0"
+                        FontAttributes="Bold"
+                        FontSize="20"
+                        HorizontalTextAlignment="Center"
+                        Text="₹249"
+                        TextColor="White"
+                        VerticalTextAlignment="Center" />
+
+                    <Label
+                        Grid.Row="8"
+                        Margin="0,120,0,0"
+                        FontSize="15"
+                        HorizontalTextAlignment="Center"
+                        Text="Browse the collection  elevate your space."
+                        TextColor="Black"
+                        VerticalTextAlignment="Center" />
+
+                    <Image
+                        Grid.Row="9"
+                        Margin="0,50,0,0"
+                        HorizontalOptions="FillAndExpand"
+                        Source="hp4.png" />
+                    <Label
+                        Grid.Row="9"
+                        Padding="30,0,0,0"
+                        FontAttributes="Bold"
+                        FontSize="20"
+                        HorizontalOptions="Start"
+                        Text="New season"
+                        TextColor="red"
+                        VerticalOptions="Center" />
+
+                    <Label
+                        Grid.Row="9"
+                        Margin="0,60,0,0"
+                        Padding="30,0,0,0"
+                        FontAttributes="Bold"
+                        FontSize="20"
+                        HorizontalOptions="Start"
+                        Text="preppy"
+                        TextColor="red"
+                        VerticalOptions="Center" />
+
+
+                </Grid>
+            </Grid>
+        </ScrollView>
+    </Grid>
+
+</ContentPage>
