@@ -5,12 +5,13 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="HomePage">
 
-    <Grid RowDefinitions="50,*">
+    <Grid BackgroundColor="White" RowDefinitions="50,*">
         <Grid
             Padding="10,20,10,10"
             ColumnDefinitions="*,2*,*,*,*,*"
             RowDefinitions="*"
             VerticalOptions="Center">
+
             <Image
                 Grid.Column="0"
                 HeightRequest="30"
@@ -186,6 +187,7 @@
                                         HeightRequest="60"
                                         HorizontalTextAlignment="Start"
                                         Text="{Binding Name}"
+                                        TextColor="Black"
                                         VerticalTextAlignment="End" />
                                     <Label
                                         Grid.Row="2"
@@ -193,6 +195,7 @@
                                         HeightRequest="50"
                                         HorizontalTextAlignment="Start"
                                         Text="{Binding Price, StringFormat='Rs. {0:F2}'}"
+                                        TextColor="Black"
                                         VerticalTextAlignment="Start" />
                                 </Grid>
                             </DataTemplate>
@@ -235,7 +238,7 @@
                         FontAttributes="Bold"
                         FontSize="20"
                         HorizontalTextAlignment="Center"
-                        Text="The Best of JP Home from"
+                        Text="The Best of J&amp;P Home from"
                         TextColor="White"
                         VerticalTextAlignment="Center" />
 
@@ -254,7 +257,7 @@
                         Margin="0,120,0,0"
                         FontSize="15"
                         HorizontalTextAlignment="Center"
-                        Text="Browse the collection  elevate your space."
+                        Text="Browse the collection &amp; elevate your space."
                         TextColor="Black"
                         VerticalTextAlignment="Center" />
 
@@ -270,7 +273,7 @@
                         FontSize="20"
                         HorizontalOptions="Start"
                         Text="New season"
-                        TextColor="red"
+                        TextColor="Black"
                         VerticalOptions="Center" />
 
                     <Label
@@ -281,7 +284,7 @@
                         FontSize="20"
                         HorizontalOptions="Start"
                         Text="preppy"
-                        TextColor="red"
+                        TextColor="Black"
                         VerticalOptions="Center" />
 
 
