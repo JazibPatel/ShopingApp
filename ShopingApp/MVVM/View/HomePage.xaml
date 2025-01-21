@@ -174,7 +174,6 @@
                                     <Image
                                         Grid.Row="0"
                                         Aspect="AspectFill"
-                                        Background="#e0e0e0"
                                         HeightRequest="300"
                                         HorizontalOptions="Center"
                                         Source="{Binding ImageUrl}"
