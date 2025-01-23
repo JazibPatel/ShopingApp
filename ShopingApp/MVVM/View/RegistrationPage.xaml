@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ShopingApp.MVVM.View.RegistrationPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="RegistrationPage">
+    <Grid
+        Padding="20"
+        Background="#fafafa"
+        ColumnDefinitions="*"
+        RowDefinitions="*">
+        <ScrollView>
+
+            <Grid ColumnDefinitions="*" RowDefinitions="*,*,*,*,*,*,*,*,*,*,*,*,*,*,*">
+
+                <Label
+                    Margin="0,50,0,0"
+                    FontAttributes="Bold"
+                    FontFamily="26"
+                    FontSize="20"
+                    HorizontalTextAlignment="Center"
+                    Text="Become an J&amp;P member"
+                    TextColor="Black"
+                    VerticalTextAlignment="Center" />
+
+                <Label
+                    Grid.Row="1"
+                    Margin="0,20,0,0"
+                    FontAttributes="Bold"
+                    FontSize="12"
+                    HorizontalTextAlignment="Center"
+                    Text="Become a member - don't miss out an deals, offers, discounts"
+                    TextColor="Black"
+                    VerticalTextAlignment="Center" />
+
+                <Label
+                    Grid.Row="1"
+                    Margin="0,60,0,0"
+                    FontAttributes="Bold"
+                    FontSize="12"
+                    HorizontalTextAlignment="Center"
+                    Text="and bonus vouchers."
+                    TextColor="Black"
+                    VerticalTextAlignment="Center" />
+
+                <Label
+                    Grid.Row="2"
+                    Margin="35,15,0,0"
+                    FontSize="12"
+                    HorizontalOptions="Start"
+                    Text="*"
+                    TextColor="Red"
+                    VerticalTextAlignment="Center" />
+                <Label
+                    Grid.Row="2"
+                    Margin="0,20,0,0"
+                    HorizontalTextAlignment="Start"
+                    Text="Email"
+                    TextColor="Black"
+                    VerticalTextAlignment="Center" />
+
+                <Border
+                    Grid.Row="3"
+                    Margin="0,15,0,0"
+                    HeightRequest="50"
+                    Stroke="Black"
+                    StrokeThickness="1">
+                    <Entry Background="White" Text="" />
+                </Border>
+
+                <Label
+                    Grid.Row="4"
+                    Margin="120,10,0,0"
+                    FontSize="12"
+                    HorizontalOptions="Start"
+                    Text="*"
+                    TextColor="Red"
+                    VerticalTextAlignment="Center" />
+
+                <Label
+                    Grid.Row="4"
+                    Margin="0,15,0,0"
+                    HorizontalTextAlignment="Start"
+                    Text="Create a password"
+                    TextColor="Black"
+                    VerticalTextAlignment="Center" />
+
+
+                <Border
+                    Grid.Row="5"
+                    Margin="0,15,0,0"
+                    HeightRequest="50"
+                    Stroke="Black"
+                    StrokeThickness="1">
+                    <Grid ColumnDefinitions="*,50" RowDefinitions="*">
+                        <Entry Grid.Column="0" Background="White" />
+                        <Image
+                            Grid.Column="1"
+                            Background="White"
+                            HeightRequest="25"
+                            Source="openeye.png" />
+                    </Grid>
+                </Border>
+
+                <Label
+                    Grid.Row="6"
+                    Margin="82,10,0,0"
+                    FontSize="12"
+                    HorizontalOptions="Start"
+                    Text="*"
+                    TextColor="Red"
+                    VerticalTextAlignment="Center" />
+
+                <Label
+                    Grid.Row="6"
+                    Margin="0,15,0,0"
+                    HorizontalTextAlignment="Start"
+                    Text="Date of birth"
+                    TextColor="Black"
+                    VerticalTextAlignment="Center" />
+
+
+                <Border
+                    Grid.Row="7"
+                    Margin="0,15,0,0"
+                    HeightRequest="50"
+                    Stroke="Black"
+                    StrokeThickness="1">
+                    <DatePicker />
+
+                </Border>
+
+                <Label
+                    Grid.Row="8"
+                    FontSize="12"
+                    HorizontalTextAlignment="Start"
+                    Text="J&amp;P wants to give you a spical treat on your birthday"
+                    TextColor="Black"
+                    VerticalTextAlignment="Center" />
+
+                <Border
+                    Grid.Row="9"
+                    Margin="0,20,0,0"
+                    Background="White"
+                    Stroke="Transparent">
+                    <Grid ColumnDefinitions="*,50" RowDefinitions="*">
+                        <Button
+                            Background="White"
+                            CornerRadius="0"
+                            FontAttributes="Bold"
+                            FontFamily=""
+                            FontSize="13"
+                            Text="ADD MORE &amp; GET MORE"
+                            TextColor="Black"
+                            VerticalOptions="Center"
+                            WidthRequest="350" />
+                        <Image
+                            Grid.Column="1"
+                            HeightRequest="20"
+                            Source="plus.png"
+                            VerticalOptions="Center" />
+                    </Grid>
+                </Border>
+
+                <Grid Grid.Row="10" Margin="0,20,0,0">
+                    <Grid ColumnDefinitions="*" RowDefinitions="*,*,*,*,*,*,*,*,*">
+
+                        <Label
+                            FontFamily=""
+                            FontSize="12"
+                            Text="Did you know that if you add some more information below you will earn more points and get a more personalized experience?&#10;How great is that?"
+                            TextColor="Black" />
+
+                        <Label
+                            Grid.Row="1"
+                            Margin="0,20,0,0"
+                            FontFamily=""
+                            HorizontalTextAlignment="Start"
+                            Text="First name"
+                            TextColor="Black"
+                            VerticalTextAlignment="Center" />
+
+                        <Border
+                            Grid.Row="2"
+                            Margin="0,15,0,0"
+                            HeightRequest="50"
+                            Stroke="Black"
+                            StrokeThickness="1">
+                            <Entry Background="White" Text="" />
+                        </Border>
+
+
+                        <Label
+                            Grid.Row="3"
+                            Margin="0,20,0,0"
+                            FontFamily=""
+                            HorizontalTextAlignment="Start"
+                            Text="Last name"
+                            TextColor="Black"
+                            VerticalTextAlignment="Center" />
+
+
+                        <Border
+                            Grid.Row="4"
+                            Margin="0,15,0,0"
+                            HeightRequest="50"
+                            Stroke="Black"
+                            StrokeThickness="1">
+                            <Entry Background="White" />
+                        </Border>
+
+                        <Label
+                            Grid.Row="5"
+                            Margin="0,20,0,0"
+                            FontFamily=""
+                            HorizontalTextAlignment="Start"
+                            Text="Gender"
+                            TextColor="Black"
+                            VerticalTextAlignment="Center" />
+
+                        <Border
+                            Grid.Row="6"
+                            Margin="0,5,0,0"
+                            HeightRequest="50"
+                            Stroke="Black"
+                            StrokeThickness="1">
+                            <Picker>
+                                <Picker.ItemsSource>
+                                    <x:Array Type="{x:Type x:String}">
+                                        <x:String>Male</x:String>
+                                        <x:String>Female</x:String>
+                                    </x:Array>
+                                </Picker.ItemsSource>
+                            </Picker>
+                        </Border>
+
+                        <Label
+                            Grid.Row="7"
+                            Margin="0,20,0,0"
+                            FontFamily=""
+                            HorizontalTextAlignment="Start"
+                            Text="Postal Code"
+                            TextColor="Black"
+                            VerticalTextAlignment="Center" />
+
+
+                        <Border
+                            Grid.Row="8"
+                            Margin="0,15,0,0"
+                            HeightRequest="50"
+                            Stroke="Black"
+                            StrokeThickness="1">
+                            <Entry Background="White" />
+                        </Border>
+
+                    </Grid>
+                </Grid>
+
+                <Border
+                    Grid.Row="11"
+                    Margin="0,20,0,0"
+                    Background="Transparent"
+                    Stroke="Transparent">
+                    <Grid ColumnDefinitions="50,*" RowDefinitions="*,*">
+
+                        <CheckBox
+                            Background="White"
+                            HorizontalOptions="Start"
+                            VerticalOptions="Center"
+                            Color="Black" />
+
+                        <Label
+                            Grid.Column="1"
+                            HorizontalTextAlignment="Start"
+                            Text="Yes, email me offers, style updates, and special invites to sales and events."
+                            TextColor="Black"
+                            VerticalTextAlignment="End" />
+
+                        <Label
+                            Grid.Row="2"
+                            Grid.Column="1"
+                            Margin="0,20,0,0"
+                            HorizontalTextAlignment="Start"
+                            Text="J&amp;P will send you information regarding your bonus points and other information regarding your membership unless you opt-out from such messages by changing your profile settings, contacting customer service, or clicking the unsubscribe link in the bottom of our emails."
+                            TextColor="Black"
+                            VerticalTextAlignment="Center" />
+                    </Grid>
+                </Border>
+
+                <Label
+                    Grid.Row="12"
+                    Margin="0,20,0,0"
+                    FontSize="12"
+                    HorizontalOptions="Start"
+                    Text="By clicking 'Join now'. I agree to the J&amp;P Membership Tearms &amp; Conditions."
+                    TextColor="#a2a2a2"
+                    VerticalOptions="Center" />
+
+                <Label
+                    Grid.Row="13"
+                    Margin="0,20,0,0"
+                    FontSize="12"
+                    HorizontalOptions="Start"
+                    Text="To give you the full membership experience. we will process your personal data in accordance with the J&amp;P's Privacy Notice."
+                    TextColor="#a2a2a2"
+                    VerticalOptions="Center" />
+
+                <Button
+                    Grid.Row="14"
+                    Margin="0,30,0,30"
+                    Background="Black"
+                    CornerRadius="0"
+                    FontAttributes="Bold"
+                    FontFamily=""
+                    FontSize="15"
+                    HorizontalOptions="Center"
+                    Text="Become an J&amp;P member"
+                    TextColor="White"
+                    VerticalOptions="Center"
+                    WidthRequest="350" />
+
+            </Grid>
+        </ScrollView>
+
+    </Grid>
+</ContentPage>
