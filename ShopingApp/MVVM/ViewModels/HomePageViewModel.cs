@@ -3,13 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using ShopingApp.MVVM.Models;
+using ShopingApp.MVVM.View;
 
 namespace ShopingApp.MVVM.ViewModels
 {
     internal class HomePageViewModel
     {
         public List<HomePageProduct> Product { get; set; }
+
+        public ICommand LoginBtn { get; }
 
         public HomePageViewModel()
         {
@@ -82,6 +86,13 @@ namespace ShopingApp.MVVM.ViewModels
                     Price = 999.00F,
                 },
             };
+
+            LoginBtn = new Command(OpenNewPage);
+        }
+
+        private void OpenNewPage()
+        {
+            Application.Current.MainPage.Navigation.PushAsync(new LoginPage());
         }
     }
 }

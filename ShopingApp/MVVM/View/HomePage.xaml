@@ -4,10 +4,12 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:views="clr-namespace:ShopingApp.MVVM.View"
-    Title="HomePage"
-    Background="White">
+    Title="HomePage">
 
-    <Grid BackgroundColor="White" RowDefinitions="60,*">
+    <Grid
+        Padding="0,20,0,0"
+        BackgroundColor="White"
+        RowDefinitions="60,*">
 
         <Grid
             Padding="10,20,10,10"
@@ -31,8 +33,9 @@
                 HorizontalOptions="Center"
                 Source="search.png" />
 
-            <Image
+            <ImageButton
                 Grid.Column="3"
+                Command="{Binding LoginBtn}"
                 HeightRequest="30"
                 HorizontalOptions="Center"
                 Source="person.png" />
@@ -302,10 +305,11 @@
 
         <ContentView
             x:Name="FlyoutNavbar"
-            Margin="0,300,0,0"
-            HeightRequest="250"
+            Margin="0,800,0,0"
+            HeightRequest="810"
             HorizontalOptions="Start"
-            IsVisible="False">
+            IsVisible="False"
+            VerticalOptions="FillAndExpand">
 
             <ContentView.GestureRecognizers>
                 <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />

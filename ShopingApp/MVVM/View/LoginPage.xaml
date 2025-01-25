@@ -4,14 +4,27 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="LoginPage">
+
     <Grid
-        Padding="20"
+        Padding="20,50,20,20"
         Background="White"
         ColumnDefinitions="*"
         RowDefinitions="*">
+
         <ScrollView>
 
             <Grid ColumnDefinitions="*" RowDefinitions="*,*,*,*,*,*,*,*,*,5*">
+
+                <Image
+                    Margin="0,0,0,100"
+                    HeightRequest="30"
+                    HorizontalOptions="Start"
+                    Source="left.png"
+                    VerticalOptions="Center">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding OnImageTap}" />
+                    </Image.GestureRecognizers>
+                </Image>
 
                 <Label
                     Margin="0,50,0,0"
@@ -45,6 +58,7 @@
                     FontSize="15"
                     HorizontalTextAlignment="Start"
                     Text="*Email"
+                    TextColor="Black"
                     VerticalTextAlignment="Center" />
 
                 <Border
@@ -60,6 +74,7 @@
                     Margin="0,15,0,0"
                     HorizontalTextAlignment="Start"
                     Text="*Password"
+                    TextColor="Black"
                     VerticalTextAlignment="Center" />
 
                 <Border
@@ -98,6 +113,7 @@
                     Background="White"
                     BorderColor="Black"
                     BorderWidth="1"
+                    Command="{Binding RegisterBtn}"
                     CornerRadius="0"
                     FontAttributes="Bold"
                     FontFamily=""

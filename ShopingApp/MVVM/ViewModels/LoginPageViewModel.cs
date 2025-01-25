@@ -10,17 +10,25 @@ namespace ShopingApp.MVVM.ViewModels
 {
     class LoginPageViewModel
     {
-        public ICommand Register { get; }
+        public ICommand RegisterBtn { get; }
+        public ICommand OnImageTap { get; }
 
 
         public LoginPageViewModel()
         {
-               Register = new Command(OpenNewPage);
+            RegisterBtn = new Command(RegisterPage);
+            OnImageTap = new Command(HomePage);
         }
-        private async void OpenNewPage()
+        private async void RegisterPage()
         {
             //await Shell.Current.GoToAsync("RegistrationPage");
             await Application.Current.MainPage.Navigation.PushAsync(new RegistrationPage());
+        }
+
+        private void HomePage()
+        {
+            Application.Current.MainPage.Navigation.PushAsync(new HomePage());
+
         }
     }
     
