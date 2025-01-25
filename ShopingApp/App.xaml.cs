@@ -12,7 +12,7 @@ namespace ShopingApp
 
         protected override Window CreateWindow(IActivationState? activationState)
         {
-            return new Window(new RegistrationPage());
+            return new Window(new NavigationPage(new HomePage()));
         }
     }
 }

@@ -13,6 +13,17 @@
 
             <Grid ColumnDefinitions="*" RowDefinitions="*,*,*,*,*,*,*,*,*,*,*,*,*,*,*">
 
+                <Image
+                    Margin="0,0,0,100"
+                    HeightRequest="30"
+                    HorizontalOptions="Start"
+                    Source="left.png"
+                    VerticalOptions="Center">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding OnImageTap}" />
+                    </Image.GestureRecognizers>
+                </Image>
+
                 <Label
                     Margin="0,50,0,0"
                     FontAttributes="Bold"
@@ -145,7 +156,9 @@
                     Stroke="Transparent">
                     <Grid ColumnDefinitions="*,50" RowDefinitions="*">
                         <Button
+                            x:Name="MoreDetailBtn"
                             Background="White"
+                            Clicked="MoreDetilClick"
                             CornerRadius="0"
                             FontAttributes="Bold"
                             FontFamily=""
@@ -155,6 +168,7 @@
                             VerticalOptions="Center"
                             WidthRequest="350" />
                         <Image
+                            x:Name="MoreDetailImg"
                             Grid.Column="1"
                             HeightRequest="20"
                             Source="plus.png"
@@ -163,7 +177,11 @@
                 </Border>
 
                 <Grid Grid.Row="10" Margin="0,20,0,0">
-                    <Grid ColumnDefinitions="*" RowDefinitions="*,*,*,*,*,*,*,*,*">
+                    <Grid
+                        x:Name="MoreDetailGrid"
+                        ColumnDefinitions="*"
+                        IsVisible="False"
+                        RowDefinitions="*,*,*,*,*,*,*,*,*">
 
                         <Label
                             FontFamily=""
@@ -264,7 +282,7 @@
                     <Grid ColumnDefinitions="50,*" RowDefinitions="*,*">
 
                         <CheckBox
-                            Background="White"
+                            Background="Transparent"
                             HorizontalOptions="Start"
                             VerticalOptions="Center"
                             Color="Black" />

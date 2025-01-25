@@ -3,20 +3,27 @@
     x:Class="ShopingApp.MVVM.View.HomePage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    Title="HomePage">
+    xmlns:views="clr-namespace:ShopingApp.MVVM.View"
+    Title="HomePage"
+    Background="White">
 
-    <Grid BackgroundColor="White" RowDefinitions="50,*">
+    <Grid BackgroundColor="White" RowDefinitions="60,*">
+
         <Grid
             Padding="10,20,10,10"
+            BackgroundColor="White"
             ColumnDefinitions="*,2*,*,*,*,*"
             RowDefinitions="*"
             VerticalOptions="Center">
 
-            <Image
+            <ImageButton
                 Grid.Column="0"
+                Clicked="ImageButton_Clicked"
                 HeightRequest="30"
                 HorizontalOptions="Start"
                 Source="menu.png" />
+
+
 
             <Image
                 Grid.Column="2"
@@ -45,7 +52,7 @@
         </Grid>
 
 
-        <ScrollView Grid.Row="1" Margin="0,15,0,0">
+        <ScrollView Grid.Row="1" Margin="0,0,0,0">
             <Grid
                 Padding="15"
                 ColumnDefinitions="*"
@@ -292,6 +299,40 @@
                 </Grid>
             </Grid>
         </ScrollView>
+
+        <ContentView
+            x:Name="FlyoutNavbar"
+            Margin="0,300,0,0"
+            HeightRequest="250"
+            HorizontalOptions="Start"
+            IsVisible="False">
+
+            <ContentView.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+            </ContentView.GestureRecognizers>
+
+
+            <Grid
+                BackgroundColor="Black"
+                ColumnDefinitions="*"
+                RowDefinitions="*,*,*"
+                WidthRequest="350">
+                <Label
+                    Grid.Column="0"
+                    Text="jdfhjwfjg"
+                    TextColor="AliceBlue" />
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Text="jdfhjwfjg"
+                    TextColor="AliceBlue" />
+                <Label
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Text="jdfhjwfjg"
+                    TextColor="AliceBlue" />
+            </Grid>
+        </ContentView>
     </Grid>
 
 
