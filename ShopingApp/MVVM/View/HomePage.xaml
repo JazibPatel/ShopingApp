@@ -7,7 +7,7 @@
     Title="HomePage">
 
     <Grid
-        Padding="0,20,0,0"
+        Padding="0,0,0,0"
         BackgroundColor="White"
         RowDefinitions="60,*">
 
@@ -27,8 +27,9 @@
 
 
 
-            <Image
+            <ImageButton
                 Grid.Column="2"
+                Command="{Binding SearchBtn}"
                 HeightRequest="30"
                 HorizontalOptions="Center"
                 Source="search.png" />
@@ -306,7 +307,7 @@
         <ContentView
             x:Name="FlyoutNavbar"
             Margin="0,800,0,0"
-            HeightRequest="810"
+            HeightRequest="860"
             HorizontalOptions="Start"
             IsVisible="False"
             VerticalOptions="FillAndExpand">

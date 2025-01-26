@@ -5,7 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="RegistrationPage">
     <Grid
-        Padding="20,50,20,20"
+        Padding="20,20,20,20"
         Background="#fafafa"
         ColumnDefinitions="*"
         RowDefinitions="*">

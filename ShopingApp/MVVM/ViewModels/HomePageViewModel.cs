@@ -15,6 +15,8 @@ namespace ShopingApp.MVVM.ViewModels
 
         public ICommand LoginBtn { get; }
 
+        public ICommand SearchBtn { get; }
+
         public HomePageViewModel()
         {
             Product = new List<HomePageProduct>()
@@ -88,11 +90,17 @@ namespace ShopingApp.MVVM.ViewModels
             };
 
             LoginBtn = new Command(OpenNewPage);
+            SearchBtn = new Command(NavbarSearchPage);
         }
 
         private void OpenNewPage()
         {
             Application.Current.MainPage.Navigation.PushAsync(new LoginPage());
+        }
+
+        private void NavbarSearchPage()
+        {
+            Application.Current.MainPage.Navigation.PushAsync(new SearchPage());
         }
     }
 }

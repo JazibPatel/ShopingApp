@@ -17,9 +17,9 @@
             HeightRequest="30"
             HorizontalOptions="Start"
             Source="menu.png">
-            <Image.GestureRecognizers>
+            <!--<Image.GestureRecognizers>
                 <TapGestureRecognizer Command="{Binding NavbarTab}" />
-            </Image.GestureRecognizers>
+            </Image.GestureRecognizers>-->
         </Image>
 
         <Image

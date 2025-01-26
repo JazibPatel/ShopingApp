@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ShopingApp.MVVM.View.SearchPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="SearchPage">
+    <Grid
+        Padding="0,0,0,0"
+        Background="#fafafa"
+        ColumnDefinitions="*"
+        RowDefinitions="50,*,80">
+
+        <Grid ColumnDefinitions="50,*" RowDefinitions="*">
+
+            <ImageButton
+                Command="{Binding BackBtn}"
+                HeightRequest="30"
+                HorizontalOptions="Start"
+                Source="left.png"
+                VerticalOptions="Center" />
+
+            <SearchBar
+                Grid.Column="1"
+                HorizontalOptions="Start"
+                Placeholder="Search"
+                PlaceholderColor="Black"
+                TextColor="Black"
+                VerticalOptions="Center" />
+
+        </Grid>
+
+
+        <BoxView
+            Grid.Row="2"
+            BackgroundColor="Black"
+            HeightRequest="1"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="Start" />
+
+        <Grid
+            Grid.Row="2"
+            Padding="0,0,0,10"
+            ColumnDefinitions="*,*,*"
+            HorizontalOptions="Center"
+            RowDefinitions="*"
+            VerticalOptions="End">
+
+            <ImageButton
+                Grid.Column="0"
+                Margin="0,0,0,20"
+                HeightRequest="25"
+                HorizontalOptions="Center"
+                Source="camera.png"
+                VerticalOptions="End" />
+            <Label
+                Grid.Column="0"
+                FontSize="10"
+                HorizontalOptions="Center"
+                Text="Take photo"
+                TextColor="Black"
+                VerticalOptions="End" />
+
+            <ImageButton
+                Grid.Column="1"
+                Margin="0,0,0,20"
+                HeightRequest="25"
+                HorizontalOptions="Center"
+                Source="scanner.png"
+                VerticalOptions="End" />
+            <Label
+                Grid.Column="1"
+                FontSize="10"
+                HorizontalOptions="Center"
+                Text="Scan Code"
+                TextColor="Black"
+                VerticalOptions="End" />
+
+            <ImageButton
+                Grid.Column="2"
+                Margin="0,0,0,20"
+                HeightRequest="25"
+                HorizontalOptions="Center"
+                Source="location.png"
+                VerticalOptions="End" />
+            <Label
+                Grid.Column="2"
+                FontSize="10"
+                HorizontalOptions="Center"
+                Text="Find store"
+                TextColor="Black"
+                VerticalOptions="End" />
+
+        </Grid>
+    </Grid>
+
+</ContentPage>
