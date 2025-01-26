@@ -4,6 +4,8 @@ namespace ShopingApp.MVVM.View;
 
 public partial class HomePage : ContentPage
 {
+
+    public int count = 1;
 	public HomePage()
 	{
 		InitializeComponent();
@@ -23,5 +25,22 @@ public partial class HomePage : ContentPage
     {
        await FlyoutNavbar.TranslateTo(-FlyoutNavbar.Width, 0, 500, Easing.CubicIn);
         FlyoutNavbar.IsVisible = false;
+    }
+
+    private void HomePageCategory(object sender, EventArgs e)
+    {
+        if (count == 1)
+        {
+            CategoryDropdownMenu.IsVisible = true;
+            CategoryDropdown.Source = "minus.png";
+            count = 0;
+        }
+        else
+        {
+            CategoryDropdownMenu.IsVisible = false;
+            CategoryDropdown.Source = "plus.png";
+            count = 1;
+        }
+
     }
 }

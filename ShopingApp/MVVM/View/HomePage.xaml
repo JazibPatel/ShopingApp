@@ -56,7 +56,7 @@
         </Grid>
 
 
-        <ScrollView Grid.Row="1" Margin="0,0,0,0">
+        <ScrollView Grid.Row="1">
             <Grid
                 Padding="15"
                 ColumnDefinitions="*"
@@ -137,34 +137,80 @@
                         TextColor="White"
                         VerticalOptions="End" />
 
-
-                    <Label
+                    <Grid
                         Grid.Row="4"
                         Margin="0,50,0,0"
-                        Padding="0,25,0,0"
-                        Background="#4b6870"
-                        FontAttributes="Bold"
-                        FontSize="20"
-                        HeightRequest="100"
-                        HorizontalOptions="Fill"
-                        HorizontalTextAlignment="Center"
-                        Text="Kids style spree: ₹799 onwords"
-                        TextColor="White"
-                        VerticalTextAlignment="Start" />
+                        ColumnDefinitions="*,30"
+                        RowDefinitions="*">
 
-                    <Label
-                        Grid.Row="4"
-                        Margin="0,15,0,0"
-                        FontSize="12"
-                        HeightRequest="90"
-                        HorizontalOptions="Fill"
-                        HorizontalTextAlignment="Center"
-                        Text="Give your little ones a wardrobe makeover."
-                        TextColor="White"
-                        VerticalTextAlignment="End" />
 
-                    <Label
+                        <ImageButton
+                            Grid.ColumnSpan="2"
+                            Aspect="AspectFill"
+                            Clicked="HomePageCategory"
+                            HeightRequest="100"
+                            Source="light2.png" />
+
+
+                        <Label
+                            Grid.Column="0"
+                            BackgroundColor="Transparent"
+                            FontAttributes="Bold"
+                            FontFamily=""
+                            FontSize="20"
+                            HorizontalTextAlignment="Center"
+                            Text="Just in: The latest styles&#10;starting at ₹799"
+                            TextColor="Black"
+                            VerticalTextAlignment="Center" />
+
+                        <Label
+                            Grid.Column="0"
+                            Margin="0,70,0,0"
+                            BackgroundColor="Transparent"
+                            FontFamily=""
+                            FontSize="12"
+                            HorizontalTextAlignment="Center"
+                            Text="Explore the collection"
+                            TextColor="Black"
+                            VerticalTextAlignment="Center" />
+
+                        <Image
+                            x:Name="CategoryDropdown"
+                            HeightRequest="30"
+                            HorizontalOptions="End"
+                            Source="plus.png"
+                            VerticalOptions="Center"
+                            WidthRequest="20" />
+                    </Grid>
+
+                    <Grid
+                        x:Name="CategoryDropdownMenu"
                         Grid.Row="5"
+                        Padding="0,15,0,15"
+                        ColumnDefinitions="*"
+                        RowDefinitions="*,*,*,*,*,*">
+
+                        <Button
+                            Padding="0,0,300,0"
+                            BackgroundColor="White"
+                            CornerRadius="0"
+                            FontAttributes="Bold"
+                            FontSize="15"
+                            HorizontalOptions="Fill"
+                            Text="Ladies"
+                            TextColor="Black"
+                            VerticalOptions="Center" />
+                        <Image
+                            HorizontalOptions="End"
+                            Source="right.png"
+                            VerticalOptions="Center" />
+
+                    </Grid>
+
+
+
+                    <Label
+                        Grid.Row="6"
                         Margin="0,50,0,0"
                         FontAttributes="Bold"
                         FontFamily=""
@@ -176,7 +222,7 @@
 
                     <CarouselView
                         x:Name="HomeCarouse"
-                        Grid.Row="6"
+                        Grid.Row="7"
                         Margin="0,20,0,0"
                         HeightRequest="300"
                         ItemsSource="{Binding Product}"
@@ -215,10 +261,10 @@
                     </CarouselView>
 
 
-                    <Image Grid.Row="7" Source="hp3.png" />
+                    <Image Grid.Row="8" Source="hp3.png" />
 
                     <Label
-                        Grid.Row="7"
+                        Grid.Row="8"
                         Margin="10,100,20,40"
                         Padding="10"
                         Background="Black"
@@ -230,7 +276,7 @@
                         VerticalOptions="Center" />
 
                     <Label
-                        Grid.Row="7"
+                        Grid.Row="8"
                         Margin="0,0,0,15"
                         FontAttributes="Bold"
                         FontFamily=""
@@ -241,12 +287,12 @@
                         VerticalOptions="End" />
 
                     <Image
-                        Grid.Row="8"
+                        Grid.Row="9"
                         Margin="0,50,0,0"
                         Source="hp5.png" />
 
                     <Label
-                        Grid.Row="8"
+                        Grid.Row="9"
                         FontAttributes="Bold"
                         FontSize="20"
                         HorizontalTextAlignment="Center"
@@ -255,7 +301,7 @@
                         VerticalTextAlignment="Center" />
 
                     <Label
-                        Grid.Row="8"
+                        Grid.Row="9"
                         Margin="0,60,0,0"
                         FontAttributes="Bold"
                         FontSize="20"
@@ -265,7 +311,7 @@
                         VerticalTextAlignment="Center" />
 
                     <Label
-                        Grid.Row="8"
+                        Grid.Row="9"
                         Margin="0,120,0,0"
                         FontSize="15"
                         HorizontalTextAlignment="Center"
@@ -274,12 +320,12 @@
                         VerticalTextAlignment="Center" />
 
                     <Image
-                        Grid.Row="9"
+                        Grid.Row="10"
                         Margin="0,50,0,0"
                         HorizontalOptions="FillAndExpand"
                         Source="hp4.png" />
                     <Label
-                        Grid.Row="9"
+                        Grid.Row="10"
                         Padding="30,0,0,0"
                         FontAttributes="Bold"
                         FontSize="20"
@@ -289,7 +335,7 @@
                         VerticalOptions="Center" />
 
                     <Label
-                        Grid.Row="9"
+                        Grid.Row="10"
                         Margin="0,60,0,0"
                         Padding="30,0,0,0"
                         FontAttributes="Bold"
@@ -315,7 +361,6 @@
             <ContentView.GestureRecognizers>
                 <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
             </ContentView.GestureRecognizers>
-
 
             <Grid
                 BackgroundColor="Black"
