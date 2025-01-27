@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ShopingApp.MVVM.View.ProductPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="ProductPage"
+    Background="White">
+
+    <Grid
+        Padding="10"
+        ColumnDefinitions="*"
+        RowDefinitions="50,*">
+
+        <Image
+            Margin="0,0,0,0"
+            HeightRequest="30"
+            HorizontalOptions="Start"
+            Source="left.png"
+            VerticalOptions="Start">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding OnImageTap}" />
+            </Image.GestureRecognizers>
+        </Image>
+
+        <Grid Grid.Row="1">
+            <ScrollView Background="White">
+                <Grid
+                    Background="White"
+                    ColumnDefinitions="*"
+                    RowDefinitions="*,*,*">
+
+                    <Grid
+                        Margin="0,0,0,20"
+                        ColumnDefinitions="*"
+                        RowDefinitions="*">
+                        <HorizontalStackLayout>
+
+                            <Border
+                                Background="{Binding ViewAllBackground}"
+                                HeightRequest="35"
+                                Stroke="Black"
+                                StrokeThickness="2"
+                                WidthRequest="100">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="15,15,15,15" />
+                                </Border.StrokeShape>
+                                <Border.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding CategoryBtn}" />
+                                </Border.GestureRecognizers>
+
+                                <Label
+                                    HorizontalOptions="Center"
+                                    Text="View All"
+                                    TextColor="{Binding ViewAllTextColor}"
+                                    VerticalOptions="Center" />
+
+                            </Border>
+
+                            <Border
+                                Margin="10,0,0,0"
+                                Background="{Binding AccessoriesBackground}"
+                                HeightRequest="35"
+                                Stroke="Black"
+                                StrokeThickness="2"
+                                WidthRequest="100">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="15,15,15,15" />
+                                </Border.StrokeShape>
+                                <Border.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding CategoryBtn}" />
+                                </Border.GestureRecognizers>
+
+                                <Label
+                                    HorizontalOptions="Center"
+                                    Text="Accessories"
+                                    TextColor="{Binding AccessoriesTextColor}"
+                                    VerticalOptions="Center" />
+
+                            </Border>
+
+
+
+                            <Button
+                                Margin="10,0,0,0"
+                                Background="White"
+                                BorderColor="Black"
+                                BorderWidth="2"
+                                CornerRadius="50"
+                                HorizontalOptions="Center"
+                                Text="Clothes"
+                                TextColor="Black"
+                                VerticalOptions="Center">
+                                <Button.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding CategoryBtn}" />
+                                </Button.GestureRecognizers>
+                            </Button>
+
+
+                        </HorizontalStackLayout>
+                    </Grid>
+
+                    <Grid Grid.Row="1" Background="White">
+
+
+                        <CollectionView ItemsSource="{Binding Product}">
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <Frame
+                                        Margin="5"
+                                        Padding="10"
+                                        BorderColor="Gray"
+                                        CornerRadius="5">
+                                        <StackLayout>
+                                            <Image HeightRequest="200" Source="{Binding ImageUrl}" />
+                                            <Label FontSize="18" Text="{Binding Name}" />
+                                            <Label FontSize="16" Text="{Binding Price, StringFormat='${0:F2}'}" />
+                                        </StackLayout>
+                                    </Frame>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+
+
+                    </Grid>
+
+                </Grid>
+            </ScrollView>
+        </Grid>
+    </Grid>
+</ContentPage>

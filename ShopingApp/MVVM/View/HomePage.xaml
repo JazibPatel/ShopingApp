@@ -55,8 +55,8 @@
 
         </Grid>
 
-
         <ScrollView Grid.Row="1">
+
             <Grid
                 Padding="15"
                 ColumnDefinitions="*"
@@ -78,6 +78,7 @@
                         Grid.Row="2"
                         Margin="0,50,0,0"
                         Source="hp1.jpg" />
+
                     <Label
                         Grid.Row="2"
                         Padding="30,0,0,0"
@@ -186,13 +187,15 @@
                     <Grid
                         x:Name="CategoryDropdownMenu"
                         Grid.Row="5"
-                        Padding="0,15,0,15"
+                        Padding="20"
                         ColumnDefinitions="*"
+                        IsVisible="False"
                         RowDefinitions="*,*,*,*,*,*">
 
                         <Button
                             Padding="0,0,300,0"
                             BackgroundColor="White"
+                            Command="{Binding ProductPageBtn}"
                             CornerRadius="0"
                             FontAttributes="Bold"
                             FontSize="15"
@@ -201,13 +204,102 @@
                             TextColor="Black"
                             VerticalOptions="Center" />
                         <Image
+                            HeightRequest="20"
+                            HorizontalOptions="End"
+                            Source="right.png"
+                            VerticalOptions="Center" />
+
+                        <Button
+                            Grid.Row="1"
+                            Padding="0,0,300,0"
+                            BackgroundColor="White"
+                            CornerRadius="0"
+                            FontAttributes="Bold"
+                            FontSize="15"
+                            HorizontalOptions="Fill"
+                            Text="Men"
+                            TextColor="Black"
+                            VerticalOptions="Center" />
+                        <Image
+                            Grid.Row="1"
+                            HeightRequest="20"
+                            HorizontalOptions="End"
+                            Source="right.png"
+                            VerticalOptions="Center" />
+
+                        <Button
+                            Grid.Row="2"
+                            Padding="0,0,300,0"
+                            BackgroundColor="White"
+                            CornerRadius="0"
+                            FontAttributes="Bold"
+                            FontSize="15"
+                            HorizontalOptions="Fill"
+                            Text="Baby"
+                            TextColor="Black"
+                            VerticalOptions="Center" />
+                        <Image
+                            Grid.Row="2"
+                            HeightRequest="20"
+                            HorizontalOptions="End"
+                            Source="right.png"
+                            VerticalOptions="Center" />
+
+                        <Button
+                            Grid.Row="3"
+                            Padding="0,0,300,0"
+                            BackgroundColor="White"
+                            CornerRadius="0"
+                            FontAttributes="Bold"
+                            FontSize="15"
+                            HorizontalOptions="Fill"
+                            Text="Kids"
+                            TextColor="Black"
+                            VerticalOptions="Center" />
+                        <Image
+                            Grid.Row="3"
+                            HeightRequest="20"
+                            HorizontalOptions="End"
+                            Source="right.png"
+                            VerticalOptions="Center" />
+
+                        <Button
+                            Grid.Row="4"
+                            Padding="0,0,300,0"
+                            BackgroundColor="White"
+                            CornerRadius="0"
+                            FontAttributes="Bold"
+                            FontSize="15"
+                            HorizontalOptions="Fill"
+                            Text="Home"
+                            TextColor="Black"
+                            VerticalOptions="Center" />
+                        <Image
+                            Grid.Row="4"
+                            HeightRequest="20"
+                            HorizontalOptions="End"
+                            Source="right.png"
+                            VerticalOptions="Center" />
+
+                        <Button
+                            Grid.Row="5"
+                            Padding="0,0,300,0"
+                            BackgroundColor="White"
+                            CornerRadius="0"
+                            FontAttributes="Bold"
+                            FontSize="15"
+                            HorizontalOptions="Fill"
+                            Text="Sports"
+                            TextColor="Black"
+                            VerticalOptions="Center" />
+                        <Image
+                            Grid.Row="5"
+                            HeightRequest="20"
                             HorizontalOptions="End"
                             Source="right.png"
                             VerticalOptions="Center" />
 
                     </Grid>
-
-
 
                     <Label
                         Grid.Row="6"
@@ -259,7 +351,6 @@
                             </DataTemplate>
                         </CarouselView.ItemTemplate>
                     </CarouselView>
-
 
                     <Image Grid.Row="8" Source="hp3.png" />
 
@@ -324,6 +415,7 @@
                         Margin="0,50,0,0"
                         HorizontalOptions="FillAndExpand"
                         Source="hp4.png" />
+
                     <Label
                         Grid.Row="10"
                         Padding="30,0,0,0"
@@ -345,9 +437,10 @@
                         TextColor="Black"
                         VerticalOptions="Center" />
 
-
                 </Grid>
+
             </Grid>
+
         </ScrollView>
 
         <ContentView
@@ -383,8 +476,7 @@
                     TextColor="AliceBlue" />
             </Grid>
         </ContentView>
+
     </Grid>
-
-
 
 </ContentPage>

@@ -16,8 +16,9 @@ public partial class HomePage : ContentPage
 
     private async void ImageButton_Clicked(object sender, EventArgs e)
     {
-        FlyoutNavbar.TranslationX = -FlyoutNavbar.Width;
+       
         FlyoutNavbar.IsVisible = true;
+        FlyoutNavbar.TranslationX = -FlyoutNavbar.Width;
         await FlyoutNavbar.TranslateTo(0, 0, 500, Easing.CubicOut);
     }
 
