@@ -66,7 +66,8 @@
                     HeightRequest="50"
                     Stroke="Black"
                     StrokeThickness="1">
-                    <Entry Background="White" Text="" />
+                    <Entry Background="White" />
+
                 </Border>
 
                 <Label

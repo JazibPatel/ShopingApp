@@ -6,23 +6,32 @@
     Title="ProductPage"
     Background="White">
 
-    <Grid
-        Padding="10"
-        ColumnDefinitions="*"
-        RowDefinitions="50,*">
+    <Grid ColumnDefinitions="*" RowDefinitions="65,*">
 
-        <Image
-            Margin="0,0,0,0"
-            HeightRequest="30"
-            HorizontalOptions="Start"
-            Source="left.png"
-            VerticalOptions="Start">
-            <Image.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding OnImageTap}" />
-            </Image.GestureRecognizers>
-        </Image>
+        <Grid
+            Margin="20"
+            ColumnDefinitions="50,*"
+            RowDefinitions="*">
+            <ImageButton
+                Clicked="BackBtn"
+                HeightRequest="30"
+                HorizontalOptions="Start"
+                Source="left.png"
+                VerticalOptions="Center" />
 
-        <Grid Grid.Row="1">
+            <Label
+                Grid.Column="1"
+                FontAttributes="Bold"
+                FontFamily=""
+                FontSize="20"
+                HorizontalOptions="Center"
+                Text="All Products"
+                TextColor="Black"
+                VerticalTextAlignment="Center" />
+
+        </Grid>
+
+        <Grid Grid.Row="1" Margin="0,20,0,20">
             <ScrollView Background="White">
                 <Grid
                     Background="White"
@@ -30,62 +39,54 @@
                     RowDefinitions="*,*,*">
 
                     <Grid
-                        Margin="0,0,0,20"
+                        Padding="10"
                         ColumnDefinitions="*"
                         RowDefinitions="*">
                         <HorizontalStackLayout>
 
-                            <Border
-                                Background="{Binding ViewAllBackground}"
-                                HeightRequest="35"
-                                Stroke="Black"
-                                StrokeThickness="2"
-                                WidthRequest="100">
-                                <Border.StrokeShape>
-                                    <RoundRectangle CornerRadius="15,15,15,15" />
-                                </Border.StrokeShape>
-                                <Border.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding CategoryBtn}" />
-                                </Border.GestureRecognizers>
-
-                                <Label
-                                    HorizontalOptions="Center"
-                                    Text="View All"
-                                    TextColor="{Binding ViewAllTextColor}"
-                                    VerticalOptions="Center" />
-
-                            </Border>
-
-                            <Border
-                                Margin="10,0,0,0"
-                                Background="{Binding AccessoriesBackground}"
-                                HeightRequest="35"
-                                Stroke="Black"
-                                StrokeThickness="2"
-                                WidthRequest="100">
-                                <Border.StrokeShape>
-                                    <RoundRectangle CornerRadius="15,15,15,15" />
-                                </Border.StrokeShape>
-                                <Border.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding CategoryBtn}" />
-                                </Border.GestureRecognizers>
-
-                                <Label
-                                    HorizontalOptions="Center"
-                                    Text="Accessories"
-                                    TextColor="{Binding AccessoriesTextColor}"
-                                    VerticalOptions="Center" />
-
-                            </Border>
-
-
-
                             <Button
                                 Margin="10,0,0,0"
+                                Padding="10,5,10,5"
                                 Background="White"
                                 BorderColor="Black"
                                 BorderWidth="2"
                                 CornerRadius="50"
+                                HeightRequest="35"
+                                HorizontalOptions="Center"
+                                Text="View All"
+                                TextColor="Black"
+                                VerticalOptions="Center">
+                                <Button.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding CategoryBtn}" />
+                                </Button.GestureRecognizers>
+                            </Button>
+
+                            <Button
+                                Margin="10,0,0,0"
+                                Padding="10,5,10,5"
+                                Background="White"
+                                BorderColor="Black"
+                                BorderWidth="2"
+                                CornerRadius="50"
+                                HeightRequest="35"
+                                HorizontalOptions="Center"
+                                Text="Accessories"
+                                TextColor="Black"
+                                VerticalOptions="Center">
+                                <Button.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding CategoryBtn}" />
+                                </Button.GestureRecognizers>
+                            </Button>
+
+                            <Button
+                                Margin="10,0,0,0"
+                                Padding="10,5,10,5"
+                                Background="White"
+                                BorderColor="Black"
+                                BorderWidth="2"
+                                CornerRadius="50"
+                                FontSize="15"
+                                HeightRequest="35"
                                 HorizontalOptions="Center"
                                 Text="Clothes"
                                 TextColor="Black"
@@ -99,23 +100,77 @@
                         </HorizontalStackLayout>
                     </Grid>
 
-                    <Grid Grid.Row="1" Background="White">
+                    <Grid
+                        Grid.Row="1"
+                        Padding="20,30,20,30"
+                        ColumnDefinitions="*,*"
+                        RowDefinitions="*">
 
+                        <Button
+                            Background="White"
+                            FontAttributes="Bold"
+                            HorizontalOptions="Start"
+                            Text="Sort By"
+                            VerticalOptions="Center" />
 
-                        <CollectionView ItemsSource="{Binding Product}">
+                        <Image
+                            Margin="60,0,0,0"
+                            HeightRequest="25"
+                            HorizontalOptions="Start"
+                            Source="arrowdown.png" />
+
+                        <Button
+                            Grid.Column="1"
+                            Padding="0,0,30,0"
+                            Background="White"
+                            FontAttributes="Bold"
+                            HorizontalOptions="End"
+                            Text="Filter"
+                            VerticalOptions="Center" />
+                        <Image
+                            Grid.Column="1"
+                            HeightRequest="20"
+                            HorizontalOptions="End"
+                            Source="setting.png" />
+
+                    </Grid>
+
+                    <Grid
+                        Grid.Row="2"
+                        Padding="10"
+                        Background="White">
+
+                        <CollectionView ItemsLayout="VerticalGrid,2" ItemsSource="{Binding Products}">
                             <CollectionView.ItemTemplate>
                                 <DataTemplate>
-                                    <Frame
-                                        Margin="5"
-                                        Padding="10"
-                                        BorderColor="Gray"
-                                        CornerRadius="5">
-                                        <StackLayout>
-                                            <Image HeightRequest="200" Source="{Binding ImageUrl}" />
-                                            <Label FontSize="18" Text="{Binding Name}" />
-                                            <Label FontSize="16" Text="{Binding Price, StringFormat='${0:F2}'}" />
-                                        </StackLayout>
-                                    </Frame>
+
+                                    <Grid
+                                        Padding="2"
+                                        ColumnDefinitions="*"
+                                        RowDefinitions="*,*,*">
+                                        <ImageButton
+                                            Grid.Row="0"
+                                            Margin="0,0,0,10"
+                                            Aspect="AspectFill"
+                                            Clicked="ImageButton_Clicked"
+                                            HeightRequest="300"
+                                            Source="{Binding ImageUrl}" />
+                                        <Label
+                                            Grid.Row="1"
+                                            Margin="10,10,0,0"
+                                            FontAttributes="Bold"
+                                            FontSize="15"
+                                            Text="{Binding Name}"
+                                            TextColor="Black" />
+                                        <Label
+                                            Grid.Row="2"
+                                            Margin="10,10,0,25"
+                                            FontSize="15"
+                                            Text="{Binding Price, StringFormat='Rs {0:F2}'}"
+                                            TextColor="Black" />
+
+                                    </Grid>
+
                                 </DataTemplate>
                             </CollectionView.ItemTemplate>
                         </CollectionView>

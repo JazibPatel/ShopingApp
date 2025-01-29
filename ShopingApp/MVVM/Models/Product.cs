@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace ShopingApp.MVVM.Models
 {
-    public class HomePageProduct
+    public class Product
     {
-        public string? ImageUrl {  get; set; }
+        public int Id { get; set; }
+        public string? ImageUrl { get; set; }
         public string? Name { get; set; }
         public float? Price { get; set; }
+        public string? Category { get; set; }
     }
 }

@@ -317,10 +317,10 @@
                         Grid.Row="7"
                         Margin="0,20,0,0"
                         HeightRequest="300"
-                        ItemsSource="{Binding Product}"
+                        ItemsSource="{Binding Products}"
                         PeekAreaInsets="90">
                         <CarouselView.ItemTemplate>
-                            <DataTemplate>
+                            <DataTemplate >
                                 <Grid ColumnDefinitions="*" RowDefinitions="*,*,*">
                                     <Image
                                         Grid.Row="0"

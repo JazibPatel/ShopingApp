@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ShopingApp.MVVM.Models;
+using ShopingApp.MVVM.View;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
@@ -10,60 +12,26 @@ namespace ShopingApp.MVVM.ViewModels
 {
     class ProductPageViewModel
     {
-        public Color ViewAllBackground { get; set; }
-        public Color ViewAllTextColor { get; set; }
+       
+        public ICommand BackBtn { get; }
+        public ICommand ProductClickedCommand { get; }
 
-        public Color AccessoriesBackground { get; set; }
-        public Color AccessoriesTextColor { get; set; }
-
-        public Color ClothesBackground { get; set; }
-        public Color ClothesTextColor { get; set; }
-
-        public ICommand CategoryBtn { get; }
-
-        public ProductPageViewModel(string category)
+        public ProductPageViewModel()
         {
-            ViewAllBackground = Color.FromRgb(255,255,255);
-            ViewAllTextColor = Color.FromRgb(0,0,0);
 
-            AccessoriesBackground = Color.FromRgb(255, 255, 255);
-            AccessoriesTextColor = Color.FromRgb(0, 0, 0);
-
-            ClothesBackground = Color.FromRgb(255, 255, 255);
-            ClothesTextColor = Color.FromRgb(0, 0, 0);
-
-            CategoryBtn = new Command<string>(OnCategoryTapped);
+            BackBtn = new Command(OpenHomePage);
+            
+            ProductClickedCommand = new Command(OnProductClicked);
         }
 
-        private void OnCategoryTapped(string category) {
-
-            ViewAllBackground = Color.FromRgb(255, 255, 255);
-            ViewAllTextColor = Color.FromRgb(0, 0, 0);
-
-            AccessoriesBackground = Color.FromRgb(255, 255, 255);
-            AccessoriesTextColor = Color.FromRgb(0, 0, 0);
-
-            ClothesBackground = Color.FromRgb(255, 255, 255);
-            ClothesTextColor = Color.FromRgb(0, 0, 0);
-
-            switch (category) {
-
-                case "ViewAll":
-                    ViewAllBackground = Color.FromRgb(255, 0, 0);
-                    ViewAllTextColor = Color.FromRgb(255, 255, 255);
-                    break;
-
-                case "Accessories":
-                    AccessoriesBackground = Color.FromRgb(255, 0, 0);
-                    AccessoriesTextColor = Color.FromRgb(255, 255, 255);
-                    break;
-
-                case "Clothes":
-                    ClothesBackground = Color.FromRgb(255, 0, 0);
-                    ClothesTextColor = Color.FromRgb(255, 255, 255);
-                    break;
-
-            }
+        private void OpenHomePage()
+        {
+            Application.Current.MainPage.Navigation.PushAsync(new HomePage());
+        }
+        private void OnProductClicked()
+        {
+            
+            Application.Current.MainPage.Navigation.PushAsync(new ProductDetailPage());
 
         }
     }
