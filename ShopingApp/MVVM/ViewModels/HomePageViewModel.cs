@@ -12,12 +12,12 @@ namespace ShopingApp.MVVM.ViewModels
     internal class HomePageViewModel
     {
         public List<Product> Products { get; set; }
-
         public ICommand LoginBtn { get; }
-
         public ICommand SearchBtn { get; }
-
         public ICommand ProductPageBtn { get; }
+        public ICommand ManCategoryBtn { get; }
+        public ICommand WomenCategoryBtn { get; }
+        public ICommand KidCategoryBtn { get; }
 
         public HomePageViewModel()
         {
@@ -268,14 +268,14 @@ namespace ShopingApp.MVVM.ViewModels
                 },
             };
 
+            ManCategoryBtn = new Command(() => OpenProductPage("Man"));
+            WomenCategoryBtn = new Command(() => OpenProductPage("Women"));
+            KidCategoryBtn = new Command(() => OpenProductPage("Kid"));
+
             LoginBtn = new Command(OpenLoginPage);
             SearchBtn = new Command(NavbarSearchPage);
-            ProductPageBtn = new Command(OpenProductPage);
-
-            
+            //ProductPageBtn = new Command(OpenProductPage);
         }
-
-
 
         private void OpenLoginPage()
         {
@@ -287,9 +287,9 @@ namespace ShopingApp.MVVM.ViewModels
             Application.Current.MainPage.Navigation.PushAsync(new SearchPage());
         }
 
-        private void OpenProductPage()
+        private void OpenProductPage(string category)
         {
-            Application.Current.MainPage.Navigation.PushAsync(new ProductPage());
+            Application.Current.MainPage.Navigation.PushAsync(new ProductPage(category));
         }
     }
 }

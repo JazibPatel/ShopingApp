@@ -140,7 +140,7 @@
                         Padding="10"
                         Background="White">
 
-                        <CollectionView ItemsLayout="VerticalGrid,2" ItemsSource="{Binding Products}">
+                        <CollectionView ItemsLayout="VerticalGrid,2" ItemsSource="{Binding FilteredProducts}">
                             <CollectionView.ItemTemplate>
                                 <DataTemplate>
 

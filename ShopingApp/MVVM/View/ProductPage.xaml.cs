@@ -4,11 +4,11 @@ namespace ShopingApp.MVVM.View;
 
 public partial class ProductPage : ContentPage
 {
-	public ProductPage()
+	public ProductPage(string category)
 	{
 		InitializeComponent();
 		NavigationPage.SetHasNavigationBar(this, false);
-		BindingContext = new HomePageViewModel();
+		BindingContext = new ProductPageViewModel(category);
 
     }
 

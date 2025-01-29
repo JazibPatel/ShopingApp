@@ -193,14 +193,14 @@
                         RowDefinitions="*,*,*,*,*,*">
 
                         <Button
-                            Padding="0,0,300,0"
+                            Padding="0,0,280,0"
                             BackgroundColor="White"
-                            Command="{Binding ProductPageBtn}"
+                            Command="{Binding WomenCategoryBtn}"
                             CornerRadius="0"
                             FontAttributes="Bold"
                             FontSize="15"
                             HorizontalOptions="Fill"
-                            Text="Ladies"
+                            Text="Women"
                             TextColor="Black"
                             VerticalOptions="Center" />
                         <Image
@@ -213,6 +213,7 @@
                             Grid.Row="1"
                             Padding="0,0,300,0"
                             BackgroundColor="White"
+                            Command="{Binding ManCategoryBtn}"
                             CornerRadius="0"
                             FontAttributes="Bold"
                             FontSize="15"
@@ -227,15 +228,17 @@
                             Source="right.png"
                             VerticalOptions="Center" />
 
+
                         <Button
                             Grid.Row="2"
                             Padding="0,0,300,0"
                             BackgroundColor="White"
+                            Command="{Binding KidCategoryBtn}"
                             CornerRadius="0"
                             FontAttributes="Bold"
                             FontSize="15"
                             HorizontalOptions="Fill"
-                            Text="Baby"
+                            Text="Kids"
                             TextColor="Black"
                             VerticalOptions="Center" />
                         <Image
@@ -253,7 +256,7 @@
                             FontAttributes="Bold"
                             FontSize="15"
                             HorizontalOptions="Fill"
-                            Text="Kids"
+                            Text="Baby"
                             TextColor="Black"
                             VerticalOptions="Center" />
                         <Image
@@ -265,7 +268,7 @@
 
                         <Button
                             Grid.Row="4"
-                            Padding="0,0,300,0"
+                            Padding="0,0,290,0"
                             BackgroundColor="White"
                             CornerRadius="0"
                             FontAttributes="Bold"
@@ -320,7 +323,7 @@
                         ItemsSource="{Binding Products}"
                         PeekAreaInsets="90">
                         <CarouselView.ItemTemplate>
-                            <DataTemplate >
+                            <DataTemplate>
                                 <Grid ColumnDefinitions="*" RowDefinitions="*,*,*">
                                     <Image
                                         Grid.Row="0"
@@ -451,29 +454,275 @@
             IsVisible="False"
             VerticalOptions="FillAndExpand">
 
-            <ContentView.GestureRecognizers>
-                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
-            </ContentView.GestureRecognizers>
-
             <Grid
-                BackgroundColor="Black"
+                BackgroundColor="White"
                 ColumnDefinitions="*"
-                RowDefinitions="*,*,*"
+                RowDefinitions="150,*"
                 WidthRequest="350">
-                <Label
-                    Grid.Column="0"
-                    Text="jdfhjwfjg"
-                    TextColor="AliceBlue" />
-                <Label
-                    Grid.Row="1"
-                    Grid.Column="0"
-                    Text="jdfhjwfjg"
-                    TextColor="AliceBlue" />
-                <Label
-                    Grid.Row="2"
-                    Grid.Column="0"
-                    Text="jdfhjwfjg"
-                    TextColor="AliceBlue" />
+
+                <ImageButton
+                    HeightRequest="100"
+                    HorizontalOptions="Start"
+                    Source="jp.jpg" />
+
+                <ScrollView Grid.Row="1">
+                    <Grid ColumnDefinitions="*" RowDefinitions="*,*,*,*,*,*,*,*,*,*,*,*,*">
+
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                        </Grid.GestureRecognizers>
+
+                        <Frame
+                            Margin="20,0,0,0"
+                            Padding="0,10,0,0"
+                            Background="White"
+                            CornerRadius="50"
+                            HeightRequest="50"
+                            HorizontalOptions="Start"
+                            VerticalOptions="Center"
+                            WidthRequest="50">
+                            <ImageButton
+                                Background="White"
+                                Command="{Binding WomenCategoryBtn}"
+                                HeightRequest="100"
+                                HorizontalOptions="Start"
+                                Source="w13.png"
+                                VerticalOptions="Center" />
+                        </Frame>
+                        <Button
+                            Margin="80,0,0,0"
+                            Background="White"
+                            Command="{Binding WomenCategoryBtn}"
+                            FontAttributes="Bold"
+                            FontFamily=""
+                            FontSize="16"
+                            HorizontalOptions="Start"
+                            Text="Woman"
+                            TextColor="Black"
+                            VerticalOptions="Center" />
+
+                        <Frame
+                            Grid.Row="1"
+                            Margin="20,0,0,0"
+                            Padding="0,10,0,0"
+                            Background="White"
+                            CornerRadius="50"
+                            HeightRequest="50"
+                            HorizontalOptions="Start"
+                            VerticalOptions="Center"
+                            WidthRequest="50">
+                            <ImageButton
+                                Background="White"
+                                Command="{Binding ManCategoryBtn}"
+                                HeightRequest="100"
+                                HorizontalOptions="Start"
+                                Source="m1.png"
+                                VerticalOptions="Center" />
+                        </Frame>
+                        <Button
+                            Grid.Row="1"
+                            Margin="80,0,0,0"
+                            Background="White"
+                            Command="{Binding ManCategoryBtn}"
+                            FontAttributes="Bold"
+                            FontFamily=""
+                            FontSize="16"
+                            HorizontalOptions="Start"
+                            Text="Men"
+                            TextColor="Black"
+                            VerticalOptions="Center" />
+
+                        <Frame
+                            Grid.Row="2"
+                            Margin="20,0,0,0"
+                            Padding="0,10,0,0"
+                            Background="White"
+                            CornerRadius="50"
+                            HeightRequest="50"
+                            HorizontalOptions="Start"
+                            VerticalOptions="Center"
+                            WidthRequest="50">
+                            <ImageButton
+                                Background="White"
+                                Command="{Binding KidCategoryBtn}"
+                                HeightRequest="100"
+                                HorizontalOptions="Start"
+                                Source="kid.png"
+                                VerticalOptions="Center" />
+                        </Frame>
+                        <Button
+                            Grid.Row="2"
+                            Margin="80,0,0,0"
+                            Background="White"
+                            Command="{Binding KidCategoryBtn}"
+                            FontAttributes="Bold"
+                            FontFamily=""
+                            FontSize="16"
+                            HorizontalOptions="Start"
+                            Text="Kids"
+                            TextColor="Black"
+                            VerticalOptions="Center" />
+
+
+                        <Frame
+                            Grid.Row="3"
+                            Margin="20,0,0,0"
+                            Padding="0,10,0,0"
+                            Background="White"
+                            CornerRadius="50"
+                            HeightRequest="50"
+                            HorizontalOptions="Start"
+                            VerticalOptions="Center"
+                            WidthRequest="50">
+                            <ImageButton
+                                Background="White"
+                                HeightRequest="100"
+                                HorizontalOptions="Start"
+                                Source="baby.png"
+                                VerticalOptions="Center" />
+                        </Frame>
+                        <Button
+                            Grid.Row="3"
+                            Margin="80,0,0,0"
+                            Background="White"
+                            FontAttributes="Bold"
+                            FontFamily=""
+                            FontSize="16"
+                            HorizontalOptions="Start"
+                            Text="Baby"
+                            TextColor="Black"
+                            VerticalOptions="Center" />
+
+
+                        <Frame
+                            Grid.Row="4"
+                            Margin="20,0,0,0"
+                            Padding="0,10,0,0"
+                            Background="White"
+                            CornerRadius="50"
+                            HeightRequest="50"
+                            HorizontalOptions="Start"
+                            VerticalOptions="Center"
+                            WidthRequest="50">
+                            <ImageButton
+                                Background="White"
+                                HeightRequest="100"
+                                HorizontalOptions="Start"
+                                Source="home2.jpg"
+                                VerticalOptions="Center" />
+                        </Frame>
+                        <Button
+                            Grid.Row="4"
+                            Margin="80,0,0,0"
+                            Background="White"
+                            FontAttributes="Bold"
+                            FontFamily=""
+                            FontSize="16"
+                            HorizontalOptions="Start"
+                            Text="Home"
+                            TextColor="Black"
+                            VerticalOptions="Center" />
+
+                        <Button
+                            Grid.Row="5"
+                            Margin="20,20,0,0"
+                            Background="White"
+                            FontAttributes="Bold"
+                            FontFamily=""
+                            FontSize="12"
+                            HorizontalOptions="Start"
+                            Text="Sustainablity"
+                            TextColor="Black"
+                            VerticalOptions="Center" />
+
+                        <Button
+                            Grid.Row="6"
+                            Margin="20,0,0,0"
+                            Background="White"
+                            FontAttributes="Bold"
+                            FontFamily=""
+                            FontSize="12"
+                            HorizontalOptions="Start"
+                            Text="Inbox"
+                            TextColor="Black"
+                            VerticalOptions="Center" />
+
+                        <Button
+                            Grid.Row="7"
+                            Margin="20,0,0,0"
+                            Background="White"
+                            FontAttributes="Bold"
+                            FontFamily=""
+                            FontSize="12"
+                            HorizontalOptions="Start"
+                            Text="My Account"
+                            TextColor="Black"
+                            VerticalOptions="Center" />
+
+                        <Button
+                            Grid.Row="8"
+                            Margin="20,0,0,0"
+                            Background="White"
+                            FontAttributes="Bold"
+                            FontFamily=""
+                            FontSize="12"
+                            HorizontalOptions="Start"
+                            Text="Customer Service"
+                            TextColor="Black"
+                            VerticalOptions="Center" />
+
+                        <Button
+                            Grid.Row="9"
+                            Margin="20,0,0,0"
+                            Background="White"
+                            FontAttributes="Bold"
+                            FontFamily=""
+                            FontSize="12"
+                            HorizontalOptions="Start"
+                            Text="Store Locator"
+                            TextColor="Black"
+                            VerticalOptions="Center" />
+
+                        <Button
+                            Grid.Row="10"
+                            Margin="20,0,0,0"
+                            Background="White"
+                            FontAttributes="Bold"
+                            FontFamily=""
+                            FontSize="12"
+                            HorizontalOptions="Start"
+                            Text="Follow us"
+                            TextColor="Black"
+                            VerticalOptions="Center" />
+
+                        <Button
+                            Grid.Row="11"
+                            Margin="20,0,0,0"
+                            Background="White"
+                            FontAttributes="Bold"
+                            FontFamily=""
+                            FontSize="12"
+                            HorizontalOptions="Start"
+                            Text="Gift Card"
+                            TextColor="Black"
+                            VerticalOptions="Center" />
+
+                        <Button
+                            Grid.Row="12"
+                            Margin="20,0,0,0"
+                            Background="White"
+                            FontAttributes="Bold"
+                            FontFamily=""
+                            FontSize="12"
+                            HorizontalOptions="Start"
+                            Text="App Settings"
+                            TextColor="Black"
+                            VerticalOptions="Center" />
+
+
+                    </Grid>
+                </ScrollView>
+
             </Grid>
         </ContentView>
 

@@ -12,27 +12,16 @@ namespace ShopingApp.MVVM.ViewModels
 {
     class ProductPageViewModel
     {
+        public List<Product> FilteredProducts { get; set; }
+
+        public ProductPageViewModel(string category)
+        {
+
+            var allProducts = new HomePageViewModel().Products;
+            FilteredProducts = allProducts.Where(p => p.Category == category).ToList();
+
+        }
+
        
-        public ICommand BackBtn { get; }
-        public ICommand ProductClickedCommand { get; }
-
-        public ProductPageViewModel()
-        {
-
-            BackBtn = new Command(OpenHomePage);
-            
-            ProductClickedCommand = new Command(OnProductClicked);
-        }
-
-        private void OpenHomePage()
-        {
-            Application.Current.MainPage.Navigation.PushAsync(new HomePage());
-        }
-        private void OnProductClicked()
-        {
-            
-            Application.Current.MainPage.Navigation.PushAsync(new ProductDetailPage());
-
-        }
     }
 }
