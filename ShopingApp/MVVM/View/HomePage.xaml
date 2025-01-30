@@ -74,10 +74,13 @@
                         Text="Free shipping above Rs. 1999"
                         TextColor="Black" />
 
-                    <Image
+                    <ImageButton
                         Grid.Row="2"
                         Margin="0,50,0,0"
-                        Source="hp1.jpg" />
+                        Command="{Binding WomenCategoryBtn}"
+                        HeightRequest="250"
+                        Source="hp1.jpg"
+                        WidthRequest="400" />
 
                     <Label
                         Grid.Row="2"
@@ -100,10 +103,13 @@
                         TextColor="White"
                         VerticalOptions="Center" />
 
-                    <Image
+                    <ImageButton
                         Grid.Row="3"
                         Margin="0,50,0,0"
-                        Source="hp2.jpg" />
+                        Command="{Binding ManCategoryBtn}"
+                        HeightRequest="250"
+                        Source="hp2.jpg"
+                        WidthRequest="400" />
 
                     <Label
                         Grid.Row="3"
@@ -320,14 +326,16 @@
                         Grid.Row="7"
                         Margin="0,20,0,0"
                         HeightRequest="300"
-                        ItemsSource="{Binding Products}"
+                        ItemsSource="{Binding ManProducts}"
                         PeekAreaInsets="90">
                         <CarouselView.ItemTemplate>
                             <DataTemplate>
                                 <Grid ColumnDefinitions="*" RowDefinitions="*,*,*">
-                                    <Image
+
+                                    <ImageButton
                                         Grid.Row="0"
                                         Aspect="AspectFill"
+                                        Command="{Binding Source={x:Reference HomeCarouse}, Path=BindingContext.ManCategoryBtn}"
                                         HeightRequest="300"
                                         HorizontalOptions="Center"
                                         Source="{Binding ImageUrl}"
@@ -355,7 +363,12 @@
                         </CarouselView.ItemTemplate>
                     </CarouselView>
 
-                    <Image Grid.Row="8" Source="hp3.png" />
+                    <ImageButton
+                        Grid.Row="8"
+                        Command="{Binding KidCategoryBtn}"
+                        HeightRequest="380"
+                        Source="hp3.png"
+                        WidthRequest="400" />
 
                     <Label
                         Grid.Row="8"
@@ -380,9 +393,11 @@
                         TextColor="Black"
                         VerticalOptions="End" />
 
-                    <Image
+                    <ImageButton
                         Grid.Row="9"
                         Margin="0,50,0,0"
+                        Command="{Binding WomenCategoryBtn}"
+                        HeightRequest="250"
                         Source="hp5.png" />
 
                     <Label

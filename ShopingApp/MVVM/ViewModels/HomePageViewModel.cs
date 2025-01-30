@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +12,7 @@ namespace ShopingApp.MVVM.ViewModels
 {
     internal class HomePageViewModel
     {
+        public List<Product> ManProducts { get; set; }
         public List<Product> Products { get; set; }
         public ICommand LoginBtn { get; }
         public ICommand SearchBtn { get; }
@@ -269,12 +271,19 @@ namespace ShopingApp.MVVM.ViewModels
             };
 
             ManCategoryBtn = new Command(() => OpenProductPage("Man"));
+
             WomenCategoryBtn = new Command(() => OpenProductPage("Women"));
+
             KidCategoryBtn = new Command(() => OpenProductPage("Kid"));
 
             LoginBtn = new Command(OpenLoginPage);
+
             SearchBtn = new Command(NavbarSearchPage);
+
             //ProductPageBtn = new Command(OpenProductPage);
+
+            ManProducts = Products.Where(p => p.Category == "Man").ToList();
+
         }
 
         private void OpenLoginPage()
