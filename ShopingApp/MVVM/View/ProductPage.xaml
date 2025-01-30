@@ -12,6 +12,7 @@
             Margin="20"
             ColumnDefinitions="50,*"
             RowDefinitions="*">
+
             <ImageButton
                 Clicked="BackBtn"
                 HeightRequest="30"
@@ -32,7 +33,9 @@
         </Grid>
 
         <Grid Grid.Row="1" Margin="0,20,0,20">
+
             <ScrollView Background="White">
+
                 <Grid
                     Background="White"
                     ColumnDefinitions="*"
@@ -42,6 +45,7 @@
                         Padding="10"
                         ColumnDefinitions="*"
                         RowDefinitions="*">
+
                         <HorizontalStackLayout>
 
                             <Button
@@ -56,9 +60,11 @@
                                 Text="View All"
                                 TextColor="Black"
                                 VerticalOptions="Center">
+
                                 <Button.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding CategoryBtn}" />
                                 </Button.GestureRecognizers>
+
                             </Button>
 
                             <Button
@@ -73,9 +79,11 @@
                                 Text="Accessories"
                                 TextColor="Black"
                                 VerticalOptions="Center">
+
                                 <Button.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding CategoryBtn}" />
                                 </Button.GestureRecognizers>
+
                             </Button>
 
                             <Button
@@ -91,13 +99,15 @@
                                 Text="Clothes"
                                 TextColor="Black"
                                 VerticalOptions="Center">
+
                                 <Button.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding CategoryBtn}" />
                                 </Button.GestureRecognizers>
+
                             </Button>
 
-
                         </HorizontalStackLayout>
+
                     </Grid>
 
                     <Grid
@@ -141,13 +151,16 @@
                         Background="White">
 
                         <CollectionView ItemsLayout="VerticalGrid,2" ItemsSource="{Binding FilteredProducts}">
+
                             <CollectionView.ItemTemplate>
+
                                 <DataTemplate>
 
                                     <Grid
                                         Padding="2"
                                         ColumnDefinitions="*"
                                         RowDefinitions="*,*,*">
+
                                         <ImageButton
                                             Grid.Row="0"
                                             Margin="0,0,0,10"
@@ -155,6 +168,7 @@
                                             Clicked="ImageButton_Clicked"
                                             HeightRequest="300"
                                             Source="{Binding ImageUrl}" />
+
                                         <Label
                                             Grid.Row="1"
                                             Margin="10,10,0,0"
@@ -162,6 +176,7 @@
                                             FontSize="15"
                                             Text="{Binding Name}"
                                             TextColor="Black" />
+
                                         <Label
                                             Grid.Row="2"
                                             Margin="10,10,0,25"
@@ -172,14 +187,19 @@
                                     </Grid>
 
                                 </DataTemplate>
-                            </CollectionView.ItemTemplate>
-                        </CollectionView>
 
+                            </CollectionView.ItemTemplate>
+
+                        </CollectionView>
 
                     </Grid>
 
                 </Grid>
+
             </ScrollView>
+
         </Grid>
+
     </Grid>
+
 </ContentPage>

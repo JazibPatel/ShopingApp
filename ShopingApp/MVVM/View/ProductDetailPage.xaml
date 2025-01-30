@@ -8,274 +8,308 @@
     <Grid
         BackgroundColor="White"
         ColumnDefinitions="*"
-        RowDefinitions="*,80">
+        RowDefinitions="*,100">
 
-        <Grid Grid.Row="0">
-            <Grid>
+        <ScrollView>
+
+            <Grid
+                BackgroundColor="White"
+                ColumnDefinitions="*"
+                RowDefinitions="*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*">
+                <Image Source="{Binding ImageUrl}" />
+
+
+                <Label
+                    Grid.Row="1"
+                    Margin="20,30,10,30"
+                    FontAttributes="Bold"
+                    FontFamily=""
+                    FontSize="15"
+                    Text="{Binding Name}"
+                    TextColor="Black" />
+
+                <Label
+                    Grid.Row="2"
+                    Margin="20,0,0,0"
+                    FontFamily=""
+                    FontSize="12"
+                    Text="MRP inclusive of all taxes"
+                    TextColor="Black" />
+
+                <Label
+                    Grid.Row="3"
+                    Margin="20,0,0,0"
+                    FontFamily=""
+                    FontSize="20"
+                    Text="{Binding Price, StringFormat='₹ {0:F2}'}"
+                    TextColor="Black" />
+
+                <Label
+                    Grid.Row="4"
+                    Margin="20,50,0,0"
+                    FontAttributes="Bold"
+                    FontFamily=""
+                    FontSize="12"
+                    Text="{Binding Color}"
+                    TextColor="Black" />
+
                 <Image
-                    Margin="100"
-                    Background="Black"
-                    Source="bag.png" />
+                    Grid.Row="5"
+                    Margin="20,30,300,0"
+                    HeightRequest="60"
+                    HorizontalOptions="Start"
+                    Source="{Binding ImageUrl}"
+                    VerticalOptions="Center" />
 
-                <ScrollView>
-                    <Grid
+                <Label
+                    Grid.Row="6"
+                    Margin="20,30,20,0"
+                    FontAttributes="Bold"
+                    FontFamily=""
+                    FontSize="18"
+                    Text="Size"
+                    TextColor="Black" />
+
+                <HorizontalStackLayout Grid.Row="7" Margin="20,10,0,10">
+                    <Button
+                        Margin="0,0,20,0"
                         BackgroundColor="White"
-                        ColumnDefinitions="*"
-                        RowDefinitions="*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*">
+                        BorderColor="Black"
+                        BorderWidth="2"
+                        HorizontalOptions="Center"
+                        Text="XS"
+                        VerticalOptions="Center" />
+                    <Button
+                        Margin="0,0,20,0"
+                        BackgroundColor="White"
+                        BorderColor="Black"
+                        BorderWidth="2"
+                        HorizontalOptions="Center"
+                        Text="S"
+                        VerticalOptions="Center" />
+                    <Button
+                        Margin="0,0,20,0"
+                        BackgroundColor="White"
+                        BorderColor="Black"
+                        BorderWidth="2"
+                        HorizontalOptions="Center"
+                        Text="M"
+                        VerticalOptions="Center" />
+                    <Button
+                        Margin="0,0,20,0"
+                        BackgroundColor="White"
+                        BorderColor="Black"
+                        BorderWidth="2"
+                        HorizontalOptions="Center"
+                        Text="X"
+                        VerticalOptions="Center" />
+                    <Button
+                        Margin="0,0,20,0"
+                        BackgroundColor="White"
+                        BorderColor="Black"
+                        BorderWidth="2"
+                        HorizontalOptions="Center"
+                        Text="L"
+                        VerticalOptions="Center" />
+                    <Button
+                        Margin="0,0,20,0"
+                        BackgroundColor="White"
+                        BorderColor="Black"
+                        BorderWidth="2"
+                        HorizontalOptions="Center"
+                        Text="XL"
+                        VerticalOptions="Center" />
+                </HorizontalStackLayout>
 
-                        <Image Source="m1" />
+                <Image
+                    Grid.Row="8"
+                    Margin="10,20,0,0"
+                    HeightRequest="25"
+                    HorizontalOptions="Start"
+                    Source="scale.png"
+                    VerticalOptions="Center" />
 
-                        <Label
-                            Grid.Row="1"
-                            Margin="20,30,10,30"
-                            FontAttributes="Bold"
-                            FontFamily=""
-                            FontSize="15"
-                            Text="Slim Fit Denim Jacket"
-                            TextColor="Black" />
-
-                        <Label
-                            Grid.Row="2"
-                            Margin="20,0,0,0"
-                            FontFamily=""
-                            FontSize="12"
-                            Text="MRP inclusive of all taxes"
-                            TextColor="Black" />
-
-                        <Label
-                            Grid.Row="3"
-                            Margin="20,0,0,0"
-                            FontFamily=""
-                            FontSize="20"
-                            Text="Rs. 799.00"
-                            TextColor="Black" />
-
-                        <Label
-                            Grid.Row="4"
-                            Margin="20,50,0,0"
-                            FontAttributes="Bold"
-                            FontFamily=""
-                            FontSize="12"
-                            Text="Blue"
-                            TextColor="Black" />
-
-                        <ImageButton
-                            Grid.Row="5"
-                            Margin="0,30,300,0"
-                            Padding="0"
-                            HeightRequest="60"
-                            HorizontalOptions="Start"
-                            Source="m1"
-                            VerticalOptions="Center" />
-
-                        <Label
-                            Grid.Row="6"
-                            Margin="20,30,20,0"
-                            FontAttributes="Bold"
-                            FontFamily=""
-                            FontSize="18"
-                            Text="Size"
-                            TextColor="Black" />
-
-                        <HorizontalStackLayout Grid.Row="7" Margin="20,10,0,10">
-                            <Button
-                                Margin="0,0,20,0"
-                                BackgroundColor="White"
-                                BorderColor="Black"
-                                BorderWidth="2"
-                                HorizontalOptions="Center"
-                                Text="XS"
-                                VerticalOptions="Center" />
-                            <Button
-                                Margin="0,0,20,0"
-                                BackgroundColor="White"
-                                BorderColor="Black"
-                                BorderWidth="2"
-                                HorizontalOptions="Center"
-                                Text="S"
-                                VerticalOptions="Center" />
-                            <Button
-                                Margin="0,0,20,0"
-                                BackgroundColor="White"
-                                BorderColor="Black"
-                                BorderWidth="2"
-                                HorizontalOptions="Center"
-                                Text="M"
-                                VerticalOptions="Center" />
-                            <Button
-                                Margin="0,0,20,0"
-                                BackgroundColor="White"
-                                BorderColor="Black"
-                                BorderWidth="2"
-                                HorizontalOptions="Center"
-                                Text="X"
-                                VerticalOptions="Center" />
-                            <Button
-                                Margin="0,0,20,0"
-                                BackgroundColor="White"
-                                BorderColor="Black"
-                                BorderWidth="2"
-                                HorizontalOptions="Center"
-                                Text="L"
-                                VerticalOptions="Center" />
-                            <Button
-                                Margin="0,0,20,0"
-                                BackgroundColor="White"
-                                BorderColor="Black"
-                                BorderWidth="2"
-                                HorizontalOptions="Center"
-                                Text="XL"
-                                VerticalOptions="Center" />
-                        </HorizontalStackLayout>
-
-                        <Image
-                            Grid.Row="8"
-                            Margin="10,20,0,0"
-                            HeightRequest="25"
-                            HorizontalOptions="Start"
-                            Source="scale.png"
-                            VerticalOptions="Center" />
-
-                        <Button
-                            Grid.Row="8"
-                            Padding="0,20,250,0"
-                            Background="White"
-                            FontAttributes="Bold"
-                            HorizontalOptions="Center"
-                            Text="Size guide" />
+                <Button
+                    Grid.Row="8"
+                    Padding="0,20,250,0"
+                    Background="White"
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center"
+                    Text="Size guide" />
 
 
-                        <Image
-                            Grid.Row="9"
-                            Margin="10,20,0,0"
-                            HeightRequest="25"
-                            HorizontalOptions="Start"
-                            Source="store.png"
-                            VerticalOptions="Center" />
+                <Image
+                    Grid.Row="9"
+                    Margin="10,20,0,0"
+                    HeightRequest="25"
+                    HorizontalOptions="Start"
+                    Source="store.png"
+                    VerticalOptions="Center" />
 
-                        <Button
-                            Grid.Row="9"
-                            Margin="35,20,0,0"
-                            Background="White"
-                            HorizontalOptions="Start"
-                            Text="Find in store" />
+                <Button
+                    Grid.Row="9"
+                    Margin="35,20,0,0"
+                    Background="White"
+                    HorizontalOptions="Start"
+                    Text="Find in store" />
 
-                        <Image
-                            Grid.Row="10"
-                            Margin="10,20,0,0"
-                            HeightRequest="25"
-                            HorizontalOptions="Start"
-                            Source="info.png"
-                            VerticalOptions="Center" />
+                <Image
+                    Grid.Row="10"
+                    Margin="10,20,0,0"
+                    HeightRequest="25"
+                    HorizontalOptions="Start"
+                    Source="info.png"
+                    VerticalOptions="Center" />
 
-                        <Label
-                            Grid.Row="10"
-                            Margin="40,20,0,0"
-                            Text="Delivery Time: 2-7 days"
-                            TextColor="Black"
-                            VerticalOptions="Center" />
+                <Label
+                    Grid.Row="10"
+                    Margin="40,20,0,0"
+                    Text="Delivery Time: 2-7 days"
+                    TextColor="Black"
+                    VerticalOptions="Center" />
 
-                        <Button
-                            Grid.Row="11"
-                            Margin="0,30,0,30"
-                            Background="White"
-                            FontAttributes="Bold"
-                            FontFamily=""
-                            FontSize="16"
-                            HorizontalOptions="Fill"
-                            Text="Delivery and Payment"
-                            TextColor="Black"
-                            VerticalOptions="Center" />
+                <Button
+                    Grid.Row="11"
+                    Margin="0,30,0,30"
+                    Background="White"
+                    FontAttributes="Bold"
+                    FontFamily=""
+                    FontSize="16"
+                    HorizontalOptions="Fill"
+                    Text="Delivery and Payment"
+                    TextColor="Black"
+                    VerticalOptions="Center" />
 
-                        <Image
-                            Grid.Row="12"
-                            Margin="20,0,0,0"
-                            HeightRequest="60"
-                            HorizontalOptions="Start"
-                            Source="stars.png"
-                            VerticalOptions="Center" />
-                        <Label
-                            Grid.Row="12"
-                            Margin="0,0,90,0"
-                            FontAttributes="Bold"
-                            HorizontalOptions="Center"
-                            Text="(28402 reviews)"
-                            TextColor="Black"
-                            VerticalOptions="Center" />
+                <Image
+                    Grid.Row="12"
+                    Margin="20,0,0,0"
+                    HeightRequest="60"
+                    HorizontalOptions="Start"
+                    Source="stars.png"
+                    VerticalOptions="Center" />
+                <Label
+                    Grid.Row="12"
+                    Margin="0,0,90,0"
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center"
+                    Text="(28402 reviews)"
+                    TextColor="Black"
+                    VerticalOptions="Center" />
 
-                        <Button
-                            Grid.Row="13"
-                            Margin="0,20,0,0"
-                            Padding="0,0,220,0"
-                            Background="White"
-                            BorderColor="Black"
-                            BorderWidth="0.1"
-                            CornerRadius="0"
-                            FontAttributes="Bold"
-                            FontSize="16"
-                            HeightRequest="60"
-                            HorizontalOptions="Fill"
-                            Text="Description &amp; fit "
-                            TextColor="Black"
-                            VerticalOptions="Center" />
+                <Button
+                    Grid.Row="13"
+                    Margin="0,20,0,0"
+                    Padding="0,0,220,0"
+                    Background="White"
+                    BorderColor="Black"
+                    BorderWidth="0.1"
+                    Clicked="DescriptionBtn"
+                    CornerRadius="0"
+                    FontAttributes="Bold"
+                    FontSize="16"
+                    HeightRequest="60"
+                    HorizontalOptions="Fill"
+                    Text="Description &amp; fit "
+                    TextColor="Black"
+                    VerticalOptions="Center" />
 
-                        <Image
-                            Grid.Row="13"
-                            Margin="0,20,0,0"
-                            HeightRequest="40"
-                            HorizontalOptions="End"
-                            Source="arrowdown.png"
-                            VerticalOptions="Center" />
+                <Image
+                    Grid.Row="13"
+                    Margin="0,20,0,0"
+                    HeightRequest="40"
+                    HorizontalOptions="End"
+                    Source="arrowdown.png"
+                    VerticalOptions="Center" />
 
-                        <Button
-                            Grid.Row="14"
-                            Padding="0,0,280,0"
-                            Background="White"
-                            BorderColor="Black"
-                            BorderWidth="0.1"
-                            CornerRadius="0"
-                            FontAttributes="Bold"
-                            FontSize="16"
-                            HeightRequest="60"
-                            HorizontalOptions="Fill"
-                            Text="Materials"
-                            TextColor="Black"
-                            VerticalOptions="Center" />
+                <Grid
+                    x:Name="DescriptionGrid"
+                    Grid.Row="14"
+                    Padding="10"
+                    IsVisible="False">
 
-                        <Image
-                            Grid.Row="14"
-                            HeightRequest="40"
-                            HorizontalOptions="End"
-                            Source="arrowdown.png"
-                            VerticalOptions="Center" />
+                    <Label
+                        Margin="10,20,10,20"
+                        FontFamily=""
+                        FontSize="15"
+                        Text="{Binding Description}"
+                        TextColor="Black" />
 
-                        <Button
-                            Grid.Row="15"
-                            Padding="0,0,270,0"
-                            Background="White"
-                            BorderColor="Black"
-                            BorderWidth="0.1"
-                            CornerRadius="0"
-                            FontAttributes="Bold"
-                            FontSize="16"
-                            HeightRequest="60"
-                            HorizontalOptions="Fill"
-                            Text="Care guide"
-                            TextColor="Black"
-                            VerticalOptions="Center" />
+                </Grid>
 
-                        <Image
-                            Grid.Row="15"
-                            HeightRequest="40"
-                            HorizontalOptions="End"
-                            Source="arrowdown.png"
-                            VerticalOptions="Center" />
+                <Button
+                    Grid.Row="15"
+                    Padding="0,0,280,0"
+                    Background="White"
+                    BorderColor="Black"
+                    BorderWidth="0.1"
+                    CornerRadius="0"
+                    FontAttributes="Bold"
+                    FontSize="16"
+                    HeightRequest="60"
+                    HorizontalOptions="Fill"
+                    Text="Materials"
+                    TextColor="Black"
+                    VerticalOptions="Center" />
 
-                    </Grid>
+                <Image
+                    Grid.Row="15"
+                    HeightRequest="40"
+                    HorizontalOptions="End"
+                    Source="arrowdown.png"
+                    VerticalOptions="Center" />
 
-                </ScrollView>
+                <Grid
+                    Grid.Row="16"
+                    Padding="10"
+                    IsVisible="False">
+
+                    <Label
+                        FontFamily=""
+                        FontSize="15"
+                        Text="{Binding Description}"
+                        TextColor="Black" />
+
+                </Grid>
+
+                <Button
+                    Grid.Row="17"
+                    Padding="0,0,270,0"
+                    Background="White"
+                    BorderColor="Black"
+                    BorderWidth="0.1"
+                    CornerRadius="0"
+                    FontAttributes="Bold"
+                    FontSize="16"
+                    HeightRequest="60"
+                    HorizontalOptions="Fill"
+                    Text="Care guide"
+                    TextColor="Black"
+                    VerticalOptions="Center" />
+
+                <Image
+                    Grid.Row="17"
+                    HeightRequest="40"
+                    HorizontalOptions="End"
+                    Source="arrowdown.png"
+                    VerticalOptions="Center" />
+
+                <Grid
+                    Grid.Row="18"
+                    Padding="10"
+                    IsVisible="False">
+
+                    <Label
+                        FontFamily=""
+                        FontSize="15"
+                        Text="{Binding Description}"
+                        TextColor="Black" />
+
+                </Grid>
+
             </Grid>
-        </Grid>
+
+        </ScrollView>
+
 
         <Grid Grid.Row="1" Padding="20">
             <Button
@@ -287,6 +321,17 @@
                 TextColor="White"
                 VerticalOptions="End" />
         </Grid>
+
+        <ImageButton
+            Margin="-350,-650,0,0"
+            Background="White"
+            Clicked="ImageButton_Clicked"
+            CornerRadius="30"
+            HeightRequest="40"
+            HorizontalOptions="Center"
+            Source="left.png"
+            VerticalOptions="Center"
+            WidthRequest="40" />
 
     </Grid>
 

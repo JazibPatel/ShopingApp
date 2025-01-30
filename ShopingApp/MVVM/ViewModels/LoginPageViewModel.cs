@@ -27,7 +27,7 @@ namespace ShopingApp.MVVM.ViewModels
 
         private void HomePage()
         {
-            Application.Current.MainPage.Navigation.PushAsync(new HomePage());
+            Application.Current.MainPage.Navigation.PopAsync();
 
         }
     }

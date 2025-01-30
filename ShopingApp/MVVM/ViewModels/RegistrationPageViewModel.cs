@@ -22,7 +22,7 @@ namespace ShopingApp.MVVM.ViewModels
         {
             //await App.Current.MainPage.DisplayAlert("jdkj", "sjacb", "kjsb");
             //await Shell.Current.GoToAsync("RegistrationPage");
-            Application.Current.MainPage.Navigation.PushAsync(new LoginPage());
+            Application.Current.MainPage.Navigation.PopAsync();
 
         }
     }

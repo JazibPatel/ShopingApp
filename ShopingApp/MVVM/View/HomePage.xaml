@@ -476,6 +476,7 @@
                 WidthRequest="350">
 
                 <ImageButton
+                    Clicked="HomeBtn"
                     HeightRequest="100"
                     HorizontalOptions="Start"
                     Source="jp.jpg" />

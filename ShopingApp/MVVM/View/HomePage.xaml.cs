@@ -44,4 +44,9 @@ public partial class HomePage : ContentPage
         }
 
     }
+
+    private async void HomeBtn(object sender, EventArgs e)
+    {
+        await Application.Current.MainPage.Navigation.PushAsync(new HomePage());
+    }
 }
