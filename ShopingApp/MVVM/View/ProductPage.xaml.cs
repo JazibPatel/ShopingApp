@@ -18,6 +18,7 @@ private async void ImageButton_Clicked(object sender, EventArgs e)
     {
         // Get the selected product from the sender's BindingContext
         var imageButton = (ImageButton)sender;
+        
         var selectedProduct = imageButton.BindingContext as Product;
 
         // Check if the cast was successful

@@ -47,8 +47,9 @@
                 HorizontalOptions="Center"
                 Source="heart.png" />
 
-            <Image
+            <ImageButton
                 Grid.Column="5"
+                Command="{Binding AddToCartBtn}"
                 HeightRequest="25"
                 HorizontalOptions="Center"
                 Source="bag.png" />

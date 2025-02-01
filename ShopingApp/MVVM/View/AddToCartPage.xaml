@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ShopingApp.MVVM.View.AddToCartPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="AddToCartPage">
+
+    <Grid
+        Background="White"
+        ColumnDefinitions="*"
+        RowDefinitions="50,100,*">
+
+        <Grid
+            Margin="0"
+            Padding="10"
+            ColumnDefinitions="50,*"
+            RowDefinitions="*">
+
+            <ImageButton
+                HeightRequest="30"
+                HorizontalOptions="Start"
+                Source="left.png"
+                VerticalOptions="Center" />
+
+            <Label
+                Grid.Column="1"
+                Margin="20,0,0,0"
+                FontAttributes="Bold"
+                FontFamily=""
+                FontSize="20"
+                HorizontalOptions="Start"
+                Text="Shopping bag"
+                TextColor="Black"
+                VerticalTextAlignment="Center" />
+        </Grid>
+
+        <Grid Grid.Row="1" Padding="10">
+            <Button
+                BackgroundColor="Black"
+                CornerRadius="0"
+                FontAttributes="Bold"
+                HorizontalOptions="Fill"
+                Text="Continue to checkout"
+                TextColor="White"
+                VerticalOptions="Center" />
+        </Grid>
+
+        <ScrollView Grid.Row="2" Background="White">
+
+            <Grid ColumnDefinitions="*" RowDefinitions="50,260">
+
+                <Button
+                    Padding="10"
+                    Background="#faf9f8"
+                    HorizontalOptions="Fill"
+                    Text="Free shipping above Rs. 1999"
+                    TextColor="Black"
+                    VerticalOptions="Center" />
+
+                <Grid
+                    Grid.Row="1"
+                    Margin="0,30"
+                    Background="#eeeeee"
+                    ColumnDefinitions="*,*,50"
+                    RowDefinitions="200">
+
+                    <Image
+                        Margin="10"
+                        Aspect="AspectFill"
+                        Source="{Binding ImageUrl}" />
+
+                    <Label
+                        Grid.Column="1"
+                        Margin="5,30"
+                        FontAttributes="Bold"
+                        FontFamily=""
+                        FontSize="15"
+                        HorizontalOptions="Start"
+                        Text="{Binding Name}"
+                        TextColor="Black"
+                        VerticalOptions="Start" />
+
+                    <Label
+                        Grid.Column="1"
+                        Margin="5,50"
+                        FontAttributes="Bold"
+                        FontFamily=""
+                        FontSize="15"
+                        HorizontalOptions="Start"
+                        Text="{Binding Price, StringFormat='Rs {0:F2}'}"
+                        TextColor="Black"
+                        VerticalOptions="Start" />
+
+                    <Label
+                        Grid.Column="1"
+                        HorizontalOptions="Start"
+                        Text="{Binding Color, StringFormat='Color : {0}'}"
+                        TextColor="Black"
+                        VerticalOptions="Center" />
+
+                    <Label
+                        Grid.Column="1"
+                        Margin="0,40,0,0"
+                        HorizontalOptions="Start"
+                        Text="Size : XL"
+                        TextColor="Black"
+                        VerticalOptions="Center" />
+
+                    <ImageButton
+                        Grid.Column="2"
+                        Margin="0,10"
+                        Padding="5"
+                        Background="White"
+                        CornerRadius="50"
+                        HeightRequest="30"
+                        HorizontalOptions="Center"
+                        Source="delete"
+                        VerticalOptions="Start"
+                        WidthRequest="30" />
+
+                </Grid>
+
+            </Grid>
+
+        </ScrollView>
+
+    </Grid>
+
+</ContentPage>

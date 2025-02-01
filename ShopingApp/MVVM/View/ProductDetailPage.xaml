@@ -71,6 +71,7 @@
                     TextColor="Black" />
 
                 <HorizontalStackLayout Grid.Row="7" Margin="20,10,0,10">
+
                     <Button
                         Margin="0,0,20,0"
                         BackgroundColor="White"
@@ -133,6 +134,7 @@
                     Grid.Row="8"
                     Padding="0,20,250,0"
                     Background="White"
+                    Clicked="SizeGuideBtn"
                     FontAttributes="Bold"
                     HorizontalOptions="Center"
                     Text="Size guide" />
@@ -189,14 +191,15 @@
                     VerticalOptions="Center" />
                 <Label
                     Grid.Row="12"
-                    Margin="0,0,90,0"
+                    Margin="85,0,0,0"
                     FontAttributes="Bold"
-                    HorizontalOptions="Center"
+                    HorizontalOptions="Start"
                     Text="(28402 reviews)"
                     TextColor="Black"
                     VerticalOptions="Center" />
 
                 <Button
+                    x:Name="Description"
                     Grid.Row="13"
                     Margin="0,20,0,0"
                     Padding="0,0,220,0"
@@ -214,6 +217,7 @@
                     VerticalOptions="Center" />
 
                 <Image
+                    x:Name="DescriptionBtmImage"
                     Grid.Row="13"
                     Margin="0,20,0,0"
                     HeightRequest="40"
@@ -237,11 +241,13 @@
                 </Grid>
 
                 <Button
+                    x:Name="Materials"
                     Grid.Row="15"
                     Padding="0,0,280,0"
                     Background="White"
                     BorderColor="Black"
                     BorderWidth="0.1"
+                    Clicked="MaterialsBtn"
                     CornerRadius="0"
                     FontAttributes="Bold"
                     FontSize="16"
@@ -252,6 +258,7 @@
                     VerticalOptions="Center" />
 
                 <Image
+                    x:Name="MaterialsImage"
                     Grid.Row="15"
                     HeightRequest="40"
                     HorizontalOptions="End"
@@ -259,6 +266,7 @@
                     VerticalOptions="Center" />
 
                 <Grid
+                    x:Name="MaterialsGrid"
                     Grid.Row="16"
                     Padding="10"
                     IsVisible="False">
@@ -266,17 +274,19 @@
                     <Label
                         FontFamily=""
                         FontSize="15"
-                        Text="{Binding Description}"
+                        Text="Composition&#10;Cotton 100%&#10;Material: Jersey&#10;Materials in this product explained&#10;Cotton&#10;Cotton is a soft and versatile natural fibre harvested from the cotton plant."
                         TextColor="Black" />
 
                 </Grid>
 
                 <Button
+                    x:Name="CareGuide"
                     Grid.Row="17"
                     Padding="0,0,270,0"
                     Background="White"
                     BorderColor="Black"
                     BorderWidth="0.1"
+                    Clicked="CareGuideBtn"
                     CornerRadius="0"
                     FontAttributes="Bold"
                     FontSize="16"
@@ -287,6 +297,7 @@
                     VerticalOptions="Center" />
 
                 <Image
+                    x:Name="CareGuideImage"
                     Grid.Row="17"
                     HeightRequest="40"
                     HorizontalOptions="End"
@@ -294,6 +305,7 @@
                     VerticalOptions="Center" />
 
                 <Grid
+                    x:Name="CareGuideGrid"
                     Grid.Row="18"
                     Padding="10"
                     IsVisible="False">
@@ -301,7 +313,7 @@
                     <Label
                         FontFamily=""
                         FontSize="15"
-                        Text="{Binding Description}"
+                        Text="You too can help the environment and make fashion more sustainable. Bring unwanted clothes or home textiles to any H&amp;M store and they will be reworn, reused or recycled.&#10;Read about how you can make your clothes last longer&#10; Line dry&#10;Only non-chlorine bleach when needed&#10;Machine wash at 40°&#10;Can be dry cleaned&#10;Wash with similar colours&#10;High iron"
                         TextColor="Black" />
 
                 </Grid>
@@ -314,6 +326,7 @@
         <Grid Grid.Row="1" Padding="20">
             <Button
                 BackgroundColor="Black"
+                Clicked="AddToCart"
                 CornerRadius="0"
                 FontAttributes="Bold"
                 HorizontalOptions="Fill"

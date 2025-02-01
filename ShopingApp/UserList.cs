@@ -5,12 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ShopingApp.MVVM.ViewModels
+namespace ShopingApp
 {
-
-    class ProductDetailViewModel
+    class UserList
     {
-    
-
+        public static List<User> Users = new List<User>();
     }
 }
