@@ -87,12 +87,33 @@ public partial class ProductDetailPage : ContentPage
 
     private async void AddToCart (object sender, EventArgs e)
     {
+
+        addtocart.IsVisible = true;
+        await Task.Delay(1000);
+        addtocart.IsVisible = false;
+
         var addButton = (Button)sender;
         var selectedProduct = addButton.BindingContext as Product;
 
-        if (selectedProduct != null) {
-            Debug.WriteLine($"Selected product: {selectedProduct.Name}");
-            await Navigation.PushAsync(new AddToCartPage(selectedProduct));
+        if (selectedProduct != null)
+        {
+            
+            var existingCartItem = CartList.Carts.FirstOrDefault(c => c.Product.Id == selectedProduct.Id);
+
+            if (existingCartItem != null)
+            {
+                
+                existingCartItem.Quantity += 1;
+                existingCartItem.TotalPrice = existingCartItem.Quantity * (double)selectedProduct.Price;
+            }
+            else
+            {
+               
+                double price = (double)selectedProduct.Price;
+                CartList.Carts.Add(new Cart { Product = selectedProduct, Quantity = 1, TotalPrice = price });
+            }
+            Debug.WriteLine($"Product {selectedProduct.Name} added to cart with quantity {CartList.Carts.Count}");
+
         }
         else
         {

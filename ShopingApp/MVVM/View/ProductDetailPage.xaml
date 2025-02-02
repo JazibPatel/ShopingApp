@@ -10,6 +10,7 @@
         ColumnDefinitions="*"
         RowDefinitions="*,100">
 
+
         <ScrollView>
 
             <Grid
@@ -345,6 +346,22 @@
             Source="left.png"
             VerticalOptions="Center"
             WidthRequest="40" />
+
+        <Border
+            x:Name="addtocart"
+            BackgroundColor="Black"
+            HorizontalOptions="Center"
+            IsVisible="False"
+            Opacity="0.5"
+            VerticalOptions="Center">
+
+            <Label
+                Padding="10"
+                FontAttributes="Bold"
+                FontFamily=""
+                Text="Item added to your cart!"
+                TextColor="White" />
+        </Border>
 
     </Grid>
 
