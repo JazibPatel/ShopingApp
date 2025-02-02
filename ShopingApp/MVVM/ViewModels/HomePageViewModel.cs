@@ -16,6 +16,7 @@ namespace ShopingApp.MVVM.ViewModels
         public List<Product> Products { get; set; }
         public ICommand LoginBtn { get; }
         public ICommand AddToCartBtn { get; }
+        public ICommand CheckOutBtn { get; }
         public ICommand SearchBtn { get; }
         public ICommand ProductPageBtn { get; }
         public ICommand ManCategoryBtn { get; }
@@ -373,11 +374,17 @@ namespace ShopingApp.MVVM.ViewModels
 
             AddToCartBtn = new Command(OpenAddToCartPage);
 
+            CheckOutBtn = new Command(OpenCheckOutPage);
+
             //ProductPageBtn = new Command(OpenProductPage);
 
             ManProducts = Products.Where(p => p.Category == "Man").ToList();
         }
 
+        private void OpenCheckOutPage()
+        {
+            Application.Current.MainPage.Navigation.PushAsync(new CheckOutPage());
+        }
         private void OpenAddToCartPage()
         {
             Application.Current.MainPage.Navigation.PushAsync(new AddToCartPage());

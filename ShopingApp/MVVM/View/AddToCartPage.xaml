@@ -8,10 +8,10 @@
     <Grid
         Background="White"
         ColumnDefinitions="*"
-        RowDefinitions="50,100,*">
+        RowDefinitions="70,80,*">
 
         <Grid
-            Margin="0"
+            Margin="0,20,0,0"
             Padding="10"
             ColumnDefinitions="50,*"
             RowDefinitions="*">
@@ -38,6 +38,7 @@
         <Grid Grid.Row="1" Padding="10">
             <Button
                 BackgroundColor="Black"
+                Clicked="CheckOutBtn"
                 CornerRadius="0"
                 FontAttributes="Bold"
                 HorizontalOptions="Fill"
@@ -48,7 +49,7 @@
 
         <ScrollView Grid.Row="2" Background="White">
 
-            <Grid ColumnDefinitions="*" RowDefinitions="100,*,*">
+            <Grid ColumnDefinitions="*" RowDefinitions="80,*,*">
 
                 <Button
                     Background="#faf9f8"
@@ -271,7 +272,7 @@
                         FontFamily=""
                         HeightRequest="50"
                         HorizontalTextAlignment="End"
-                        Text="Order Value"
+                        Text="00.00"
                         TextColor="Gray"
                         VerticalTextAlignment="Center" />
 
@@ -292,13 +293,13 @@
                         TextColor="Gray" />
 
                     <Label
+                        x:Name="orderValue"
                         Grid.Row="1"
                         Grid.Column="1"
                         Margin="0,20,20,0"
                         FontAttributes="Bold"
                         FontFamily=""
                         HorizontalOptions="End"
-                        Text="Order Value"
                         TextColor="Gray" />
 
                     <Label
@@ -310,13 +311,13 @@
                         TextColor="Gray" />
 
                     <Label
+                        x:Name="deliverCharges"
                         Grid.Row="1"
                         Grid.Column="1"
                         Margin="0,60,20,0"
                         FontAttributes="Bold"
                         FontFamily=""
                         HorizontalOptions="End"
-                        Text="Order Value"
                         TextColor="Gray" />
 
                     <BoxView
@@ -333,19 +334,21 @@
                         Margin="20,0,0,0"
                         FontAttributes="Bold"
                         FontFamily=""
+                        FontSize="18"
                         HorizontalOptions="Start"
                         Text="Total"
                         TextColor="Gray"
                         VerticalTextAlignment="Center" />
 
                     <Label
+                        x:Name="total"
                         Grid.Row="2"
                         Grid.Column="1"
                         Margin="0,0,20,0"
                         FontAttributes="Bold"
                         FontFamily=""
+                        FontSize="18"
                         HorizontalOptions="End"
-                        Text="Total"
                         TextColor="Gray"
                         VerticalTextAlignment="Center" />
 
@@ -358,19 +361,77 @@
                         VerticalOptions="End"
                         Color="Gray" />
 
-                    <Label Grid.Row="3"
-                           TextColor="Black"
-                           FontAttributes="Bold"
-                           Grid.ColumnSpan="2"
-                           Text="We accept"
-                           VerticalOptions="Center"
-                           HorizontalOptions="Start"
-                           Margin="20,30,0,0"/>
+                    <Label
+                        Grid.Row="3"
+                        Grid.ColumnSpan="2"
+                        Margin="20,30,0,0"
+                        FontAttributes="Bold"
+                        HorizontalOptions="Start"
+                        Text="We accept"
+                        TextColor="Black"
+                        VerticalOptions="Center" />
 
-                    <HorizontalStackLayout Grid.Row="4" Grid.ColumnSpan="2">
-                        
+                    <HorizontalStackLayout
+                        Grid.Row="4"
+                        Grid.ColumnSpan="2"
+                        Margin="30,15,0,0">
+
+                        <Image
+                            Margin="0,0,30,0"
+                            HeightRequest="30"
+                            Source="a1" />
+                        <Image
+                            Margin="0,0,30,0"
+                            HeightRequest="20"
+                            Source="a2" />
+                        <Image
+                            Margin="0,0,30,0"
+                            HeightRequest="30"
+                            Source="a3" />
+                        <Image
+                            Margin="0,0,30,0"
+                            HeightRequest="30"
+                            Source="a4" />
+                        <Image
+                            Margin="0,0,30,0"
+                            HeightRequest="40"
+                            Source="a5" />
+
                     </HorizontalStackLayout>
-                    
+                    <HorizontalStackLayout
+                        Grid.Row="5"
+                        Grid.ColumnSpan="2"
+                        Margin="30,15,0,0">
+
+
+                        <Image
+                            Margin="0,0,30,0"
+                            HeightRequest="25"
+                            Source="a6" />
+                        <Image
+                            Margin="0,0,30,0"
+                            HeightRequest="30"
+                            Source="a7" />
+                        <Image
+                            Margin="0,0,30,0"
+                            HeightRequest="35"
+                            Source="a8" />
+
+                    </HorizontalStackLayout>
+
+                    <Label
+                        Grid.Row="6"
+                        Grid.ColumnSpan="2"
+                        Margin="20,30,0,0"
+                        Text="Prices and delivery costs are not confirmed until you've reached the checkout."
+                        TextColor="Gray" />
+
+                    <Label
+                        Grid.Row="7"
+                        Grid.ColumnSpan="2"
+                        Margin="20,10,0,50"
+                        Text="15 days free returns. Read more about return and refund policy."
+                        TextColor="Gray" />
 
                 </Grid>
 

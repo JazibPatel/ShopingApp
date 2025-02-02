@@ -14,7 +14,7 @@
         <Grid
             Padding="10,20,10,10"
             BackgroundColor="White"
-            ColumnDefinitions="*,2*,*,*,*,*"
+            ColumnDefinitions="*,2*,*,*,*,*,*"
             RowDefinitions="*"
             VerticalOptions="Center">
 
@@ -53,6 +53,13 @@
                 HeightRequest="25"
                 HorizontalOptions="Center"
                 Source="bag.png" />
+
+            <ImageButton
+                Grid.Column="6"
+                Command="{Binding CheckOutBtn}"
+                HeightRequest="30"
+                HorizontalOptions="Center"
+                Source="checkout.png" />
 
         </Grid>
 
