@@ -435,6 +435,22 @@
 
                 </Grid>
 
+                <Border
+                    x:Name="addproducttocart"
+                    BackgroundColor="Black"
+                    HorizontalOptions="Center"
+                    IsVisible="False"
+                    Opacity="0.5"
+                    VerticalOptions="End">
+
+                    <Label
+                        Padding="10"
+                        FontAttributes="Bold"
+                        FontFamily=""
+                        Text="Your Cart is Empty. Add Product :)"
+                        TextColor="White" />
+                </Border>
+
             </Grid>
 
         </ScrollView>

@@ -119,19 +119,62 @@ public partial class AddToCartPage : ContentPage
         }
     }
 
-    private void CheckOutBtn(object sender, EventArgs e)
+    private async void CheckOutBtn(object sender, EventArgs e)
     {
-        foreach (var i in CartList.Carts)
+        //foreach (var i in CartList.Carts)
+        //{
+        //    Debug.WriteLine(
+        //        $" All Product : {CartList.Carts.Count} \n "
+        //            + $"Product Id : {i.Product.Id} \n "
+        //            + $"Product qty : {i.Quantity} \n "
+        //            + $"Product TPrice : {i.TotalPrice}"
+        //    );
+        //}
+        if (CartList.Carts.Count >= 1)
         {
-            
-            Debug.WriteLine(
-                $" All Product : {CartList.Carts.Count} \n " +
-                $"Product Id : {i.Product.Id} \n " +
-                $"Product qty : {i.Quantity} \n " +
-                $"Product TPrice : {i.TotalPrice}"
-            );
+            var total = CartList.Carts.Sum(c => c.TotalPrice);
 
-            CheckOutList.checkouts
+            if (total > 1999)
+            {
+                total = (double)(total + 149.00);
+            }
+
+            foreach (var item in CartList.Carts)
+            {
+                CheckOutList.checkouts.Add(
+                    new CheckOut
+                    {
+                        Product = item.Product,
+                        Quantity = item.Quantity,
+                        Price = item.Quantity * (double)item.Product.Price,
+                        Total = total,
+                        Pending = true,
+                        InProcess = false,
+                        Delivered = false,
+                    }
+                );
+            }
+
+            CartList.Carts.Clear();
+
+            await Navigation.PushAsync(new CheckOutPage());
+            Navigation.RemovePage(this);
+
+            //foreach (var item in CheckOutList.checkouts)
+            //{
+            //    Debug.WriteLine(
+            //        $"Product : {item.Product} \n "
+            //            + $"Quantity : {item.Quantity} \n"
+            //            + $" Price : {item.Price} \n "
+            //            + $"Total : {item.Total} \n "
+            //            + $"Pending : {item.Pending} \n"
+            //            + $"InProcess : {item.InProcess} \n"
+            //            + $"Delivered : {item.Delivered}"
+            //    );
+            //}
         }
+        addproducttocart.IsVisible = true;
+        await Task.Delay(1500);
+        addproducttocart.IsVisible = false;
     }
 }

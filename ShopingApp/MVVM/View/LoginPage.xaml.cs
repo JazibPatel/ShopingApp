@@ -41,9 +41,10 @@ public partial class LoginPage : ContentPage
 
         var existingUser = UserList.Users
          .FirstOrDefault(u => u.Email == email.Text && u.Password == password.Text);
+       
 
         if (existingUser != null)
-        {
+        {   
             await DisplayAlert("Message", "Sing Up Successfull :)", "OK");
             await Navigation.PushAsync(new HomePage());
         }

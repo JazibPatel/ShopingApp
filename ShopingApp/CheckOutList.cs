@@ -7,8 +7,8 @@ using ShopingApp.MVVM.Models;
 
 namespace ShopingApp
 {
-    internal class CheckOutList
+    class CheckOutList
     {
-        List<CheckOut> checkouts = new List<CheckOut>();
+        public static List<CheckOut> checkouts = new List<CheckOut>();
     }
 }

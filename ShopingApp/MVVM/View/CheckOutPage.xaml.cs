@@ -6,5 +6,6 @@ public partial class CheckOutPage : ContentPage
 	{
 		InitializeComponent();
 		NavigationPage.SetHasNavigationBar(this, false);
+		BindingContext = CheckOutList.checkouts;
 	}
 }

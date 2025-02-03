@@ -6,193 +6,538 @@
     Title="CheckOutPage">
 
     <Grid
-        Background="White"
+        Padding="0,20,0,0"
+        Background="#fafafa"
         ColumnDefinitions="*"
-        RowDefinitions="50,100,*">
+        RowDefinitions="*,150">
 
-        <Grid
-            Margin="0"
-            Padding="10"
-            ColumnDefinitions="50,*"
-            RowDefinitions="*">
+        <ScrollView Background="White">
 
-            <ImageButton
-                HeightRequest="30"
-                HorizontalOptions="Start"
-                Source="left.png"
-                VerticalOptions="Center" />
+            <Grid ColumnDefinitions="*" RowDefinitions="50,150,*,*">
 
-            <Label
-                Grid.Column="1"
-                Margin="20,0,0,0"
-                FontAttributes="Bold"
-                FontFamily=""
-                FontSize="20"
-                HorizontalOptions="Start"
-                Text="CheckOut"
-                TextColor="Black"
-                VerticalTextAlignment="Center" />
-        </Grid>
+                <Grid
+                    Padding="10"
+                    Background="#fafafa"
+                    ColumnDefinitions="50,*"
+                    RowDefinitions="*">
+
+                    <ImageButton
+                        HeightRequest="30"
+                        HorizontalOptions="Start"
+                        Source="left.png"
+                        VerticalOptions="Center" />
+
+                    <Label
+                        Grid.Column="1"
+                        Margin="20,0,0,0"
+                        FontAttributes="Bold"
+                        FontFamily=""
+                        FontSize="20"
+                        HorizontalOptions="Start"
+                        Text="Shopping Bag"
+                        TextColor="Black"
+                        VerticalTextAlignment="Center" />
+                </Grid>
+
+                <Label
+                    Grid.Row="1"
+                    Background="#fafafa"
+                    FontAttributes="Bold"
+                    FontFamily=""
+                    FontSize="30"
+                    HeightRequest="150"
+                    HorizontalOptions="Fill"
+                    HorizontalTextAlignment="Center"
+                    Text="Checkout"
+                    TextColor="Black"
+                    VerticalTextAlignment="Center" />
+
+                <Grid
+                    Grid.Row="2"
+                    Margin="0,0,0,20"
+                    ColumnDefinitions="*,*"
+                    RowDefinitions="*,*,*,*,*,*,*,*,*,*,*,*,*,*,*">
+
+                    <Label
+                        Margin="20,20,0,0"
+                        FontAttributes="Bold"
+                        FontFamily=""
+                        FontSize="15"
+                        HorizontalOptions="Start"
+                        Text="My infomartion"
+                        TextColor="Black"
+                        VerticalOptions="Center" />
+
+                    <Label
+                        Grid.Row="1"
+                        Margin="20,20,0,0"
+                        FontAttributes="Bold"
+                        FontFamily=""
+                        FontSize="15"
+                        HorizontalOptions="Start"
+                        Text="First Name"
+                        TextColor="Black"
+                        VerticalOptions="Center" />
+
+                    <Border
+                        Grid.Row="2"
+                        Margin="10,0"
+                        HeightRequest="50"
+                        Stroke="Gray"
+                        StrokeThickness="1">
+                        <Entry
+                            Background="White"
+                            Text=""
+                            TextColor="Black" />
+                    </Border>
+
+                    <Label
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Margin="20,20,0,0"
+                        FontAttributes="Bold"
+                        FontFamily=""
+                        FontSize="15"
+                        HorizontalOptions="Start"
+                        Text="Last Name"
+                        TextColor="Black"
+                        VerticalOptions="Center" />
+
+                    <Border
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        Margin="10,0"
+                        HeightRequest="50"
+                        Stroke="Gray"
+                        StrokeThickness="1">
+                        <Entry
+                            Background="White"
+                            Text=""
+                            TextColor="Black" />
+                    </Border>
 
 
+                    <Label
+                        Grid.Row="3"
+                        Margin="20,20,0,0"
+                        FontAttributes="Bold"
+                        FontFamily=""
+                        FontSize="15"
+                        HorizontalOptions="Start"
+                        Text="Phone"
+                        TextColor="Black"
+                        VerticalOptions="Center" />
 
-        <ScrollView Grid.Row="1" Background="White">
+                    <Border
+                        Grid.Row="4"
+                        Grid.ColumnSpan="2"
+                        Margin="10,0"
+                        HeightRequest="50"
+                        Stroke="Gray"
+                        StrokeThickness="1">
+                        <Entry
+                            Background="White"
+                            Text=""
+                            TextColor="Black" />
+                    </Border>
 
-            <Grid ColumnDefinitions="*" RowDefinitions="*">
+                    <Label
+                        Grid.Row="5"
+                        Margin="20,20,0,0"
+                        FontAttributes="Bold"
+                        FontFamily=""
+                        FontSize="15"
+                        HorizontalOptions="Start"
+                        Text="Address"
+                        TextColor="Black"
+                        VerticalOptions="Center" />
 
-                <CollectionView ItemsSource="{Binding}">
+                    <Border
+                        Grid.Row="6"
+                        Grid.ColumnSpan="2"
+                        Margin="10,0"
+                        HeightRequest="100"
+                        Stroke="Gray"
+                        StrokeThickness="1">
+                        <Entry
+                            Background="White"
+                            HeightRequest="100"
+                            Text=""
+                            TextColor="Black" />
+                    </Border>
 
-                    <CollectionView.ItemTemplate>
+                    <Label
+                        Grid.Row="7"
+                        Margin="20,20,0,0"
+                        FontAttributes="Bold"
+                        FontFamily=""
+                        FontSize="15"
+                        HorizontalOptions="Start"
+                        Text="City"
+                        TextColor="Black"
+                        VerticalOptions="Center" />
 
-                        <DataTemplate>
+                    <Border
+                        Grid.Row="8"
+                        Margin="10,0"
+                        HeightRequest="50"
+                        Stroke="Gray"
+                        StrokeThickness="1">
+                        <Entry
+                            Background="White"
+                            Text=""
+                            TextColor="Black" />
+                    </Border>
 
-                            <Grid
-                                Margin="0,5"
-                                Background="#eeeeee"
-                                ColumnDefinitions="*,*,*"
-                                RowDefinitions="200">
+                    <Label
+                        Grid.Row="7"
+                        Grid.Column="1"
+                        Margin="20,20,0,0"
+                        FontAttributes="Bold"
+                        FontFamily=""
+                        FontSize="15"
+                        HorizontalOptions="Start"
+                        Text="Postel code"
+                        TextColor="Black"
+                        VerticalOptions="Center" />
 
-                                <Image
-                                    Grid.Column="0"
-                                    Margin="10"
-                                    Aspect="AspectFill"
-                                    Source="{Binding Product.ImageUrl}" />
+                    <Border
+                        Grid.Row="8"
+                        Grid.Column="1"
+                        Margin="10,0"
+                        HeightRequest="50"
+                        Stroke="Gray"
+                        StrokeThickness="1">
+                        <Entry
+                            Background="White"
+                            Text=""
+                            TextColor="Black" />
+                    </Border>
 
 
-                                <Label
-                                    Grid.Column="1"
-                                    Grid.ColumnSpan="2"
-                                    Margin="5,15"
-                                    FontAttributes="Bold"
-                                    FontFamily=""
-                                    FontSize="20"
-                                    HorizontalOptions="Start"
-                                    Text="{Binding Product.Name}"
-                                    TextColor="Black"
-                                    VerticalOptions="Start" />
+                    <Label
+                        Grid.Row="11"
+                        Margin="20,20"
+                        FontAttributes="Bold"
+                        FontFamily=""
+                        Text="Select Payment Method"
+                        TextColor="Black" />
 
-                                <Label
-                                    Grid.Column="1"
-                                    Margin="5,50"
-                                    FontAttributes="Bold"
-                                    FontFamily=""
-                                    FontSize="15"
-                                    HorizontalOptions="Start"
-                                    Text="{Binding Product.Price, StringFormat='Rs {0:F2}'}"
-                                    TextColor="Black"
-                                    VerticalOptions="Start" />
+                    <RadioButton
+                        Grid.Row="12"
+                        Content="Cash on Delivery (COD)"
+                        GroupName="PaymentMethod"
+                        TextColor="Black"
+                        Value="COD" />
 
-                                <Label
-                                    Grid.Column="1"
-                                    FontAttributes="Bold"
-                                    FontSize="12"
-                                    HorizontalOptions="Start"
-                                    Text="Art no: "
-                                    TextColor="Black"
-                                    VerticalOptions="Center" />
+                    <RadioButton
+                        Grid.Row="12"
+                        Grid.Column="1"
+                        Content="Online Payment"
+                        GroupName="PaymentMethod"
+                        TextColor="Black"
+                        Value="Online" />
 
-                                <Label
-                                    Grid.Column="2"
-                                    FontAttributes="Bold"
-                                    FontSize="12"
-                                    HorizontalOptions="Start"
-                                    Text="764234765"
-                                    TextColor="Black"
-                                    VerticalOptions="Center" />
+                    <!--<Label
+                        Grid.Row="9"
+                        Margin="20,30"
+                        FontAttributes="Bold"
+                        FontFamily=""
+                        FontSize="15"
+                        HorizontalOptions="Start"
+                        Text="Our product"
+                        TextColor="Black"
+                        VerticalOptions="Center" />
+                    <ImageButton
+                        Grid.Row="9"
+                        Grid.Column="1"
+                        HeightRequest="30"
+                        HorizontalOptions="End"
+                        Source="arrowdown.png" />-->
 
-                                <Label
-                                    Grid.Column="1"
-                                    Margin="0,40,0,0"
-                                    FontAttributes="Bold"
-                                    FontSize="12"
-                                    HorizontalOptions="Start"
-                                    Text="Color: "
-                                    TextColor="Black"
-                                    VerticalOptions="Center" />
+                    <Grid
+                        Grid.Row="10"
+                        Grid.ColumnSpan="2"
+                        ColumnDefinitions="*"
+                        IsVisible="True"
+                        RowDefinitions="*">
 
-                                <Label
-                                    Grid.Column="2"
-                                    Margin="0,40,0,0"
-                                    FontAttributes="Bold"
-                                    FontSize="12"
-                                    HorizontalOptions="Start"
-                                    Text="{Binding Product.Color}"
-                                    TextColor="Black"
-                                    VerticalOptions="Center" />
+                        <CollectionView ItemsSource="{Binding}">
 
-                                <Label
-                                    Grid.Column="1"
-                                    Margin="0,80,0,0"
-                                    FontAttributes="Bold"
-                                    FontSize="12"
-                                    HorizontalOptions="Start"
-                                    Text="Size:"
-                                    TextColor="Black"
-                                    VerticalOptions="Center" />
+                            <CollectionView.ItemTemplate>
 
-                                <Label
-                                    Grid.Column="2"
-                                    Margin="0,80,0,0"
-                                    FontAttributes="Bold"
-                                    FontSize="12"
-                                    HorizontalOptions="Start"
-                                    Text="XL"
-                                    TextColor="Black"
-                                    VerticalOptions="Center" />
+                                <DataTemplate>
 
-                                <Label
-                                    Grid.Column="1"
-                                    Margin="0,120,0,0"
-                                    FontAttributes="Bold"
-                                    FontSize="12"
-                                    HorizontalOptions="Start"
-                                    Text="Quantity"
-                                    TextColor="Black"
-                                    VerticalOptions="Center" />
+                                    <Grid
+                                        Margin="0,5"
+                                        Background="#eeeeee"
+                                        ColumnDefinitions="*,*,*"
+                                        RowDefinitions="200">
 
-                                <Label
-                                    Grid.Column="2"
-                                    Margin="0,120,0,0"
-                                    FontAttributes="Bold"
-                                    FontSize="12"
-                                    HorizontalOptions="Start"
-                                    Text="{Binding Quantity}"
-                                    TextColor="Black"
-                                    VerticalOptions="Center" />
+                                        <Image
+                                            Grid.Column="0"
+                                            Margin="10"
+                                            Aspect="AspectFill"
+                                            Source="{Binding Product.ImageUrl}" />
 
-                                <Label
-                                    Grid.Column="1"
-                                    Margin="0,160,0,0"
-                                    FontAttributes="Bold"
-                                    FontSize="14"
-                                    HorizontalOptions="Start"
-                                    Text="Total Price"
-                                    TextColor="Black"
-                                    VerticalOptions="Center" />
 
-                                <Label
-                                    Grid.Column="2"
-                                    Margin="0,160,0,0"
-                                    FontAttributes="Bold"
-                                    FontSize="14"
-                                    HorizontalOptions="Start"
-                                    Text="{Binding TotalPrice, StringFormat='{0:F2}'}"
-                                    TextColor="Black"
-                                    VerticalOptions="Center" />
+                                        <Label
+                                            Grid.Column="1"
+                                            Grid.ColumnSpan="2"
+                                            Margin="5,15"
+                                            FontAttributes="Bold"
+                                            FontFamily=""
+                                            FontSize="20"
+                                            HorizontalOptions="Start"
+                                            Text="{Binding Product.Name}"
+                                            TextColor="Black"
+                                            VerticalOptions="Start" />
 
-                            </Grid>
+                                        <Label
+                                            Grid.Column="1"
+                                            Margin="5,50"
+                                            FontAttributes="Bold"
+                                            FontFamily=""
+                                            FontSize="15"
+                                            HorizontalOptions="Start"
+                                            Text="{Binding Product.Price, StringFormat='Rs {0:F2}'}"
+                                            TextColor="Black"
+                                            VerticalOptions="Start" />
 
-                        </DataTemplate>
+                                        <Label
+                                            Grid.Column="1"
+                                            FontAttributes="Bold"
+                                            FontSize="12"
+                                            HorizontalOptions="Start"
+                                            Text="Art no: "
+                                            TextColor="Black"
+                                            VerticalOptions="Center" />
 
-                    </CollectionView.ItemTemplate>
+                                        <Label
+                                            Grid.Column="2"
+                                            FontAttributes="Bold"
+                                            FontSize="12"
+                                            HorizontalOptions="Start"
+                                            Text="764234765"
+                                            TextColor="Black"
+                                            VerticalOptions="Center" />
 
-                </CollectionView>
+                                        <Label
+                                            Grid.Column="1"
+                                            Margin="0,40,0,0"
+                                            FontAttributes="Bold"
+                                            FontSize="12"
+                                            HorizontalOptions="Start"
+                                            Text="Color: "
+                                            TextColor="Black"
+                                            VerticalOptions="Center" />
+
+                                        <Label
+                                            Grid.Column="2"
+                                            Margin="0,40,0,0"
+                                            FontAttributes="Bold"
+                                            FontSize="12"
+                                            HorizontalOptions="Start"
+                                            Text="{Binding Product.Color}"
+                                            TextColor="Black"
+                                            VerticalOptions="Center" />
+
+                                        <Label
+                                            Grid.Column="1"
+                                            Margin="0,80,0,0"
+                                            FontAttributes="Bold"
+                                            FontSize="12"
+                                            HorizontalOptions="Start"
+                                            Text="Size:"
+                                            TextColor="Black"
+                                            VerticalOptions="Center" />
+
+                                        <Label
+                                            Grid.Column="2"
+                                            Margin="0,80,0,0"
+                                            FontAttributes="Bold"
+                                            FontSize="12"
+                                            HorizontalOptions="Start"
+                                            Text="XL"
+                                            TextColor="Black"
+                                            VerticalOptions="Center" />
+
+                                        <Label
+                                            Grid.Column="1"
+                                            Margin="0,120,0,0"
+                                            FontAttributes="Bold"
+                                            FontSize="12"
+                                            HorizontalOptions="Start"
+                                            Text="Quantity"
+                                            TextColor="Black"
+                                            VerticalOptions="Center" />
+
+                                        <Label
+                                            Grid.Column="2"
+                                            Margin="0,120,0,0"
+                                            FontAttributes="Bold"
+                                            FontSize="12"
+                                            HorizontalOptions="Start"
+                                            Text="{Binding Quantity}"
+                                            TextColor="Black"
+                                            VerticalOptions="Center" />
+
+                                        <Label
+                                            Grid.Column="1"
+                                            Margin="0,160,0,0"
+                                            FontAttributes="Bold"
+                                            FontSize="14"
+                                            HorizontalOptions="Start"
+                                            Text="Total Price"
+                                            TextColor="Black"
+                                            VerticalOptions="Center" />
+
+                                        <Label
+                                            Grid.Column="2"
+                                            Margin="0,160,0,0"
+                                            FontAttributes="Bold"
+                                            FontSize="14"
+                                            HorizontalOptions="Start"
+                                            Text="{Binding Total, StringFormat='{0:F2}'}"
+                                            TextColor="Black"
+                                            VerticalOptions="Center" />
+
+                                    </Grid>
+
+                                </DataTemplate>
+
+                            </CollectionView.ItemTemplate>
+
+                        </CollectionView>
+
+                    </Grid>
+
+                </Grid>
 
             </Grid>
 
         </ScrollView>
 
-    </Grid>
 
+        <Grid
+            Grid.Row="1"
+            ColumnDefinitions="*,*"
+            RowDefinitions="50,50,50">
+
+            <Label
+                Margin="20,0,0,0"
+                FontAttributes="Bold"
+                FontFamily=""
+                HeightRequest="50"
+                HorizontalTextAlignment="Start"
+                Text="Discount"
+                TextColor="Gray"
+                VerticalTextAlignment="Center" />
+
+            <Label
+                Grid.Column="1"
+                Margin="0,0,20,0"
+                FontAttributes="Bold"
+                FontFamily=""
+                HeightRequest="50"
+                HorizontalTextAlignment="End"
+                Text="00.00"
+                TextColor="Gray"
+                VerticalTextAlignment="Center" />
+
+            <BoxView
+                Grid.ColumnSpan="2"
+                Margin="0,50,0,0"
+                HeightRequest="1"
+                HorizontalOptions="Fill"
+                VerticalOptions="Center"
+                Color="Gray" />
+
+            <!--<Label
+                Grid.Row="1"
+                Margin="20,20,0,0"
+                FontAttributes="Bold"
+                FontFamily=""
+                Text="Order Value"
+                TextColor="Gray" />-->
+
+            <!--<Label
+                x:Name="orderValue"
+                Grid.Row="1"
+                Grid.Column="1"
+                Margin="0,20,20,0"
+                FontAttributes="Bold"
+                FontFamily=""
+                HorizontalOptions="End"
+                Text="{Binding CheckOut.Total}"
+                TextColor="Gray" />
+
+            <Label
+                Grid.Row="1"
+                Margin="20,60,0,0"
+                FontAttributes="Bold"
+                FontFamily=""
+                Text="Delivery"
+                TextColor="Gray" />-->
+
+            <!--<Label
+                x:Name="deliverCharges"
+                Grid.Row="1"
+                Grid.Column="1"
+                Margin="0,60,20,0"
+                FontAttributes="Bold"
+                FontFamily=""
+                HorizontalOptions="End"
+                TextColor="Gray" />-->
+
+            <BoxView
+                Grid.Row="1"
+                Grid.ColumnSpan="2"
+                Margin="0,50,0,0"
+                HeightRequest="1"
+                HorizontalOptions="Fill"
+                VerticalOptions="End"
+                Color="Gray" />
+
+            <Label
+                Grid.Row="1"
+                Margin="20,0,0,0"
+                FontAttributes="Bold"
+                FontFamily=""
+                FontSize="18"
+                HorizontalOptions="Start"
+                Text="Total"
+                TextColor="Gray"
+                VerticalTextAlignment="Center" />
+
+            <Label
+                x:Name="total"
+                Grid.Row="1"
+                Grid.Column="1"
+                Margin="0,0,20,0"
+                FontAttributes="Bold"
+                FontFamily=""
+                FontSize="18"
+                HorizontalOptions="End"
+                Text="{Binding checkouts.Total}"
+                TextColor="Gray"
+                VerticalTextAlignment="Center" />
+
+            <Button
+                Grid.Row="2"
+                Grid.ColumnSpan="2"
+                Margin="0,0,0,0"
+                BackgroundColor="Black"
+                CornerRadius="0"
+                FontAttributes="Bold"
+                HeightRequest="50"
+                HorizontalOptions="Fill"
+                Text="Place Order"
+                TextColor="White"
+                VerticalOptions="Center" />
+
+        </Grid>
+
+    </Grid>
 
 </ContentPage>
