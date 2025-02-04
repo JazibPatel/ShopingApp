@@ -383,7 +383,7 @@ namespace ShopingApp.MVVM.ViewModels
 
         private void OpenCheckOutPage()
         {
-            Application.Current.MainPage.Navigation.PushAsync(new CheckOutPage());
+            Application.Current.MainPage.Navigation.PushAsync(new OrderPage());
         }
         private void OpenAddToCartPage()
         {

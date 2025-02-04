@@ -13,7 +13,7 @@
 
         <ScrollView Background="White">
 
-            <Grid ColumnDefinitions="*" RowDefinitions="50,150,*,*">
+            <Grid ColumnDefinitions="*" RowDefinitions="50,*,*,*">
 
                 <Grid
                     Padding="10"
@@ -34,26 +34,13 @@
                         FontFamily=""
                         FontSize="20"
                         HorizontalOptions="Start"
-                        Text="Shopping Bag"
+                        Text="Checkout"
                         TextColor="Black"
                         VerticalTextAlignment="Center" />
                 </Grid>
 
-                <Label
-                    Grid.Row="1"
-                    Background="#fafafa"
-                    FontAttributes="Bold"
-                    FontFamily=""
-                    FontSize="30"
-                    HeightRequest="150"
-                    HorizontalOptions="Fill"
-                    HorizontalTextAlignment="Center"
-                    Text="Checkout"
-                    TextColor="Black"
-                    VerticalTextAlignment="Center" />
-
                 <Grid
-                    Grid.Row="2"
+                    Grid.Row="1"
                     Margin="0,0,0,20"
                     ColumnDefinitions="*,*"
                     RowDefinitions="*,*,*,*,*,*,*,*,*,*,*,*,*,*,*">
@@ -116,7 +103,6 @@
                             TextColor="Black" />
                     </Border>
 
-
                     <Label
                         Grid.Row="3"
                         Margin="20,20,0,0"
@@ -124,7 +110,7 @@
                         FontFamily=""
                         FontSize="15"
                         HorizontalOptions="Start"
-                        Text="Phone"
+                        Text="Email"
                         TextColor="Black"
                         VerticalOptions="Center" />
 
@@ -141,8 +127,33 @@
                             TextColor="Black" />
                     </Border>
 
+
                     <Label
                         Grid.Row="5"
+                        Margin="20,20,0,0"
+                        FontAttributes="Bold"
+                        FontFamily=""
+                        FontSize="15"
+                        HorizontalOptions="Start"
+                        Text="Phone"
+                        TextColor="Black"
+                        VerticalOptions="Center" />
+
+                    <Border
+                        Grid.Row="6"
+                        Grid.ColumnSpan="2"
+                        Margin="10,0"
+                        HeightRequest="50"
+                        Stroke="Gray"
+                        StrokeThickness="1">
+                        <Entry
+                            Background="White"
+                            Text=""
+                            TextColor="Black" />
+                    </Border>
+
+                    <Label
+                        Grid.Row="7"
                         Margin="20,20,0,0"
                         FontAttributes="Bold"
                         FontFamily=""
@@ -153,7 +164,7 @@
                         VerticalOptions="Center" />
 
                     <Border
-                        Grid.Row="6"
+                        Grid.Row="8"
                         Grid.ColumnSpan="2"
                         Margin="10,0"
                         HeightRequest="100"
@@ -167,7 +178,7 @@
                     </Border>
 
                     <Label
-                        Grid.Row="7"
+                        Grid.Row="9"
                         Margin="20,20,0,0"
                         FontAttributes="Bold"
                         FontFamily=""
@@ -178,7 +189,7 @@
                         VerticalOptions="Center" />
 
                     <Border
-                        Grid.Row="8"
+                        Grid.Row="10"
                         Margin="10,0"
                         HeightRequest="50"
                         Stroke="Gray"
@@ -190,7 +201,7 @@
                     </Border>
 
                     <Label
-                        Grid.Row="7"
+                        Grid.Row="9"
                         Grid.Column="1"
                         Margin="20,20,0,0"
                         FontAttributes="Bold"
@@ -202,7 +213,7 @@
                         VerticalOptions="Center" />
 
                     <Border
-                        Grid.Row="8"
+                        Grid.Row="10"
                         Grid.Column="1"
                         Margin="10,0"
                         HeightRequest="50"
@@ -238,24 +249,53 @@
                         TextColor="Black"
                         Value="Online" />
 
-                    <!--<Label
-                        Grid.Row="9"
-                        Margin="20,30"
+                    <Label
+                        Grid.Row="13"
+                        Margin="20,20,0,20"
                         FontAttributes="Bold"
                         FontFamily=""
                         FontSize="15"
                         HorizontalOptions="Start"
-                        Text="Our product"
+                        Text="Our products"
                         TextColor="Black"
                         VerticalOptions="Center" />
-                    <ImageButton
-                        Grid.Row="9"
-                        Grid.Column="1"
-                        HeightRequest="30"
-                        HorizontalOptions="End"
-                        Source="arrowdown.png" />-->
 
                     <Grid
+                        Grid.Row="14"
+                        Grid.ColumnSpan="2"
+                        ColumnDefinitions="*"
+                        HeightRequest="150"
+                        RowDefinitions="*">
+                        <CollectionView
+                            HorizontalScrollBarVisibility="Always"
+                            ItemsLayout="HorizontalList"
+                            ItemsSource="{Binding}">
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid ColumnDefinitions="*,50" RowDefinitions="*">
+                                        <Image
+                                            Grid.ColumnSpan="2"
+                                            Aspect="AspectFit"
+                                            HeightRequest="150"
+                                            Source="{Binding Product.ImageUrl}"
+                                            WidthRequest="150" />
+
+                                        <ImageButton
+                                            Grid.Column="1"
+                                            Margin="0,0,20,5"
+                                            Clicked="RemoveProduct"
+                                            HeightRequest="30"
+                                            Source="deletecircle.png"
+                                            VerticalOptions="End" />
+
+
+                                    </Grid>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </Grid>
+
+                    <!--<Grid
                         Grid.Row="10"
                         Grid.ColumnSpan="2"
                         ColumnDefinitions="*"
@@ -410,7 +450,7 @@
 
                         </CollectionView>
 
-                    </Grid>
+                    </Grid>-->
 
                 </Grid>
 
@@ -519,7 +559,6 @@
                 FontFamily=""
                 FontSize="18"
                 HorizontalOptions="End"
-                Text="{Binding checkouts.Total}"
                 TextColor="Gray"
                 VerticalTextAlignment="Center" />
 
@@ -534,7 +573,8 @@
                 HorizontalOptions="Fill"
                 Text="Place Order"
                 TextColor="White"
-                VerticalOptions="Center" />
+                VerticalOptions="Center" 
+                Clicked="OrderPlaced"/>
 
         </Grid>
 
