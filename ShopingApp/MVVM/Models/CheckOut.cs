@@ -1,27 +1,64 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ShopingApp.MVVM.Models
 {
-    internal class CheckOut
+    public class CheckOut : INotifyPropertyChanged
     {
-        public Product Product { get; set; }
+        public required Product Product { get; set; }
 
-        public int Quantity { get; set; }
+        private int _quantity;
+        public int Quantity
+        {
+            get => _quantity;
+            set
+            {
+                if (_quantity != value)
+                {
+                    _quantity = value;
+                    OnPropertyChanged(nameof(Quantity));
+                }
+            }
+        }
 
-        public double Price { get; set; }
+        private double _price;
+        public double Price
+        {
+            get => _price;
+            set
+            {
+                if (_price != value)
+                {
+                    _price = value;
+                    OnPropertyChanged(nameof(Price));
+                }
+            }
+        }
 
-        public double Total { get; set; }
+        private double _total;
+        public double Total
+        {
+            get => _total;
+            set
+            {
+                if (_total != value)
+                {
+                    _total = value;
+                    OnPropertyChanged(nameof(Total));
+                }
+            }
+        }
 
-        public bool Pending { get; set; }
+        public event PropertyChangedEventHandler PropertyChanged;
 
-        public bool InProcess { get; set; }
-
-        public bool OutForDelivery { get; set; }
-
-        public bool Delivered { get; set; }
+        public void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
+
 }

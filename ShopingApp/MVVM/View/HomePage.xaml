@@ -57,9 +57,9 @@
             <ImageButton
                 Grid.Column="6"
                 Command="{Binding CheckOutBtn}"
-                HeightRequest="30"
+                HeightRequest="35"
                 HorizontalOptions="Center"
-                Source="checkout.png" />
+                Source="order.png" />
 
         </Grid>
 

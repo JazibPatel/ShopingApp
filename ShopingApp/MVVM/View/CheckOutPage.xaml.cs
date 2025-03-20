@@ -10,19 +10,10 @@ public partial class CheckOutPage : ContentPage
         InitializeComponent();
         NavigationPage.SetHasNavigationBar(this, false);
         BindingContext = CheckOutList.checkouts;
-
-        var firstItem = CheckOutList.checkouts.FirstOrDefault();
-        if (firstItem != null)
-        {
-            total.Text = firstItem.Total.ToString();
-        }
-        else
-        {
-            total.Text = "00.00";
-        }
+        updateToatl();
     }
 
-    private async void RemoveProduct(object sender, EventArgs e)
+    private void RemoveProduct(object sender, EventArgs e)
     {
         var removeproductbtn = (ImageButton)sender;
         var selectProduct = removeproductbtn.BindingContext as CheckOut;
@@ -40,13 +31,30 @@ public partial class CheckOutPage : ContentPage
         if (ProductId != null)
         {
             CheckOutList.checkouts.Remove(ProductId);
-            await Navigation.PushAsync(new CheckOutPage());
-            Navigation.RemovePage(this);
+            updateToatl();
+        }
+    }
+
+    public void updateToatl()
+    {
+        var firstItem = CheckOutList.checkouts.FirstOrDefault();
+        if (firstItem != null)
+        {
+            var Total = CheckOutList.checkouts.Sum(p => p.Price);
+            total.Text = Total > 0 ? Total.ToString("F2") : "00.00";
+
         }
     }
 
     private async void OrderPlaced(object sender, EventArgs e)
     {
         await Navigation.PushAsync(new OrderPage());
+        CheckOutList.checkouts.Clear();
+    }
+
+    protected override void OnDisappearing()
+    {
+        base.OnDisappearing();
+        CheckOutList.checkouts.Clear();
     }
 }

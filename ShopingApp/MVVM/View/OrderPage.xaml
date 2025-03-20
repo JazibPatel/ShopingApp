@@ -180,14 +180,13 @@
                                     VerticalOptions="Center" />
 
                                 <Label
-                                    x:Name="sone"
+                                    x:Name="status1"
                                     Grid.Row="1"
                                     FontAttributes="Bold"
                                     FontFamily=""
                                     FontSize="16"
                                     HorizontalOptions="Center"
                                     Text="Pending"
-                                    TextColor="Red"
                                     VerticalOptions="Center" />
 
                                 <Image
@@ -215,7 +214,6 @@
                                     FontSize="16"
                                     HorizontalOptions="Center"
                                     Text="In Proccess"
-                                    TextColor="#f7d578"
                                     VerticalOptions="Center" />
 
                                 <Image
@@ -243,7 +241,6 @@
                                     FontSize="16"
                                     HorizontalOptions="Center"
                                     Text="Delivered"
-                                    TextColor="green"
                                     VerticalOptions="Center" />
 
                                 <Image

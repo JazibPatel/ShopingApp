@@ -148,9 +148,6 @@ public partial class AddToCartPage : ContentPage
                         Quantity = item.Quantity,
                         Price = item.Quantity * (double)item.Product.Price,
                         Total = total,
-                        Pending = true,
-                        InProcess = false,
-                        Delivered = false,
                     }
                 );
             }

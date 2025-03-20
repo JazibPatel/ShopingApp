@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ShopingApp.MVVM.Models;
+﻿using ShopingApp.MVVM.Models;
+using System.Collections.ObjectModel;
 
-namespace ShopingApp
+public static class CheckOutList
 {
-    class CheckOutList
-    {
-        public static List<CheckOut> checkouts = new List<CheckOut>();
-    }
+    public static ObservableCollection<CheckOut> checkouts { get; set; } = new ObservableCollection<CheckOut>();
 }

@@ -1,3 +1,5 @@
+using ShopingApp.MVVM.Models;
+
 namespace ShopingApp.MVVM.View;
 
 public partial class OrderPage : ContentPage
@@ -7,7 +9,6 @@ public partial class OrderPage : ContentPage
         InitializeComponent();
         NavigationPage.SetHasNavigationBar(this, false);
         BindingContext = CheckOutList.checkouts;
-        
     }
 
     private async void BackBtn(object sender, EventArgs e)
