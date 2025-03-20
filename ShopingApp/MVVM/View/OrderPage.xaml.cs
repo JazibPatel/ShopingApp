@@ -8,7 +8,7 @@ public partial class OrderPage : ContentPage
     {
         InitializeComponent();
         NavigationPage.SetHasNavigationBar(this, false);
-        BindingContext = CheckOutList.checkouts;
+        BindingContext = OrderList.orders;
     }
 
     private async void BackBtn(object sender, EventArgs e)

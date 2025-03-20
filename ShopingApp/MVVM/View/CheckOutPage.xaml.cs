@@ -42,14 +42,27 @@ public partial class CheckOutPage : ContentPage
         {
             var Total = CheckOutList.checkouts.Sum(p => p.Price);
             total.Text = Total > 0 ? Total.ToString("F2") : "00.00";
-
         }
     }
 
     private async void OrderPlaced(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new OrderPage());
+        foreach (var item in CheckOutList.checkouts)
+        {
+            var newOrder = new Order
+            {
+                Product = item.Product,
+                TotalQuantity = item.Quantity,
+                TotalPrice = (double)(item.Quantity * item.Product.Price),
+                Pending = true,
+                Shipped = false,
+                Delivered = false,
+            };
+
+            OrderList.orders.Add(newOrder);
+        }
         CheckOutList.checkouts.Clear();
+        await Navigation.PushAsync(new OrderPage());
     }
 
     protected override void OnDisappearing()
