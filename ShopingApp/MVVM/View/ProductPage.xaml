@@ -116,7 +116,20 @@
                         ColumnDefinitions="*,*"
                         RowDefinitions="*">
 
-                        <Button
+                        <Picker
+                            x:Name="SortPicker"
+                            Title="Sort By"
+                            SelectedIndexChanged="SortPicker_SelectedIndexChanged"
+                            TextColor="Black">
+                            <Picker.Items>
+                                <x:String>Price: Low to High</x:String>
+                                <x:String>Price: High to Low</x:String>
+                                <x:String>Name: A to Z</x:String>
+                                <x:String>Name: Z to A</x:String>
+                            </Picker.Items>
+                        </Picker>
+
+                        <!--<Button
                             Background="White"
                             FontAttributes="Bold"
                             HorizontalOptions="Start"
@@ -127,7 +140,7 @@
                             Margin="60,0,0,0"
                             HeightRequest="25"
                             HorizontalOptions="Start"
-                            Source="arrowdown.png" />
+                            Source="arrowdown.png" />-->
 
                         <Button
                             Grid.Column="1"
@@ -150,7 +163,10 @@
                         Padding="10"
                         Background="White">
 
-                        <CollectionView ItemsLayout="VerticalGrid,2" ItemsSource="{Binding FilteredProducts}">
+                        <CollectionView
+                            x:Name="FilteredProductsView"
+                            ItemsLayout="VerticalGrid,2"
+                            ItemsSource="{Binding FilteredProducts}">
 
                             <CollectionView.ItemTemplate>
 

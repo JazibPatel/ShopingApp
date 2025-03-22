@@ -12,7 +12,7 @@ public partial class SearchPage : ContentPage
     public SearchPage(List<Product> productList)
 	{
 		InitializeComponent();
-		NavigationPage.SetHasNavigationBar(this, false);
+        NavigationPage.SetHasNavigationBar(this,false);
 
         ProductList = productList;
         SearchProductList.ItemsSource = FilteredProducts;
@@ -65,6 +65,17 @@ public partial class SearchPage : ContentPage
         else
         {
             Debug.WriteLine("Selected product is null or not of the correct type.");
+        }
+
+    }
+
+    private async void Searchbar_SearchButtonPressed(object sender, EventArgs e)
+    {
+
+        string SearchQuery = Searchbar.Text?.Trim().ToLower();
+
+        if (!string.IsNullOrWhiteSpace(SearchQuery)) {
+            await Navigation.PushAsync(new ProductPage(SearchQuery, true));
         }
 
     }

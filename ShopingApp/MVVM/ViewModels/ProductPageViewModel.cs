@@ -14,12 +14,21 @@ namespace ShopingApp.MVVM.ViewModels
     {
         public List<Product> FilteredProducts { get; set; }
 
-        public ProductPageViewModel(string category)
+        public ProductPageViewModel(string category, bool isSearch)
         {
 
             var allProducts = new HomePageViewModel().Products;
-            FilteredProducts = allProducts.Where(p => p.Category == category).ToList();
 
+            if (isSearch)
+            {
+                FilteredProducts = allProducts.Where(p => p.Name.ToLower().Contains(category) || p.Category.ToLower().Contains(category)).ToList();
+            }
+            else
+            {
+
+                FilteredProducts = allProducts.Where(p => p.Category == category).ToList();
+
+            }
         }
 
        

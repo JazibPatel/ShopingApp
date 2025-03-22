@@ -401,7 +401,7 @@ namespace ShopingApp.MVVM.ViewModels
 
         private void OpenProductPage(string category)
         {
-            Application.Current.MainPage.Navigation.PushAsync(new ProductPage(category));
+            Application.Current.MainPage.Navigation.PushAsync(new ProductPage(category, false));
         }
     }
 }

@@ -25,6 +25,7 @@
                 HorizontalOptions="Start"
                 Placeholder="Search"
                 PlaceholderColor="Black"
+                SearchButtonPressed="Searchbar_SearchButtonPressed"
                 TextChanged="Searchbar_TextChanged"
                 TextColor="Black"
                 VerticalOptions="Center" />
