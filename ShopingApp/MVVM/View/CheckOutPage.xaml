@@ -73,6 +73,7 @@
                         Stroke="Gray"
                         StrokeThickness="1">
                         <Entry
+                            x:Name="firstname"
                             Background="White"
                             Text=""
                             TextColor="Black" />
@@ -98,6 +99,7 @@
                         Stroke="Gray"
                         StrokeThickness="1">
                         <Entry
+                            x:Name="lastname"
                             Background="White"
                             Text=""
                             TextColor="Black" />
@@ -122,6 +124,7 @@
                         Stroke="Gray"
                         StrokeThickness="1">
                         <Entry
+                            x:Name="email"
                             Background="White"
                             Text=""
                             TextColor="Black" />
@@ -147,6 +150,7 @@
                         Stroke="Gray"
                         StrokeThickness="1">
                         <Entry
+                            x:Name="phone"
                             Background="White"
                             Text=""
                             TextColor="Black" />
@@ -171,6 +175,7 @@
                         Stroke="Gray"
                         StrokeThickness="1">
                         <Entry
+                            x:Name="address"
                             Background="White"
                             HeightRequest="100"
                             Text=""
@@ -195,6 +200,7 @@
                         Stroke="Gray"
                         StrokeThickness="1">
                         <Entry
+                            x:Name="city"
                             Background="White"
                             Text=""
                             TextColor="Black" />
@@ -220,6 +226,7 @@
                         Stroke="Gray"
                         StrokeThickness="1">
                         <Entry
+                            x:Name="postelcode"
                             Background="White"
                             Text=""
                             TextColor="Black" />
@@ -235,6 +242,7 @@
                         TextColor="Black" />
 
                     <RadioButton
+                        x:Name="cod"
                         Grid.Row="12"
                         Content="Cash on Delivery (COD)"
                         GroupName="PaymentMethod"
@@ -242,6 +250,7 @@
                         Value="COD" />
 
                     <RadioButton
+                        x:Name="online"
                         Grid.Row="12"
                         Grid.Column="1"
                         Content="Online Payment"
@@ -294,164 +303,6 @@
                             </CollectionView.ItemTemplate>
                         </CollectionView>
                     </Grid>
-
-                    <!--<Grid
-                        Grid.Row="10"
-                        Grid.ColumnSpan="2"
-                        ColumnDefinitions="*"
-                        IsVisible="True"
-                        RowDefinitions="*">
-
-                        <CollectionView ItemsSource="{Binding}">
-
-                            <CollectionView.ItemTemplate>
-
-                                <DataTemplate>
-
-                                    <Grid
-                                        Margin="0,5"
-                                        Background="#eeeeee"
-                                        ColumnDefinitions="*,*,*"
-                                        RowDefinitions="200">
-
-                                        <Image
-                                            Grid.Column="0"
-                                            Margin="10"
-                                            Aspect="AspectFill"
-                                            Source="{Binding Product.ImageUrl}" />
-
-
-                                        <Label
-                                            Grid.Column="1"
-                                            Grid.ColumnSpan="2"
-                                            Margin="5,15"
-                                            FontAttributes="Bold"
-                                            FontFamily=""
-                                            FontSize="20"
-                                            HorizontalOptions="Start"
-                                            Text="{Binding Product.Name}"
-                                            TextColor="Black"
-                                            VerticalOptions="Start" />
-
-                                        <Label
-                                            Grid.Column="1"
-                                            Margin="5,50"
-                                            FontAttributes="Bold"
-                                            FontFamily=""
-                                            FontSize="15"
-                                            HorizontalOptions="Start"
-                                            Text="{Binding Product.Price, StringFormat='Rs {0:F2}'}"
-                                            TextColor="Black"
-                                            VerticalOptions="Start" />
-
-                                        <Label
-                                            Grid.Column="1"
-                                            FontAttributes="Bold"
-                                            FontSize="12"
-                                            HorizontalOptions="Start"
-                                            Text="Art no: "
-                                            TextColor="Black"
-                                            VerticalOptions="Center" />
-
-                                        <Label
-                                            Grid.Column="2"
-                                            FontAttributes="Bold"
-                                            FontSize="12"
-                                            HorizontalOptions="Start"
-                                            Text="764234765"
-                                            TextColor="Black"
-                                            VerticalOptions="Center" />
-
-                                        <Label
-                                            Grid.Column="1"
-                                            Margin="0,40,0,0"
-                                            FontAttributes="Bold"
-                                            FontSize="12"
-                                            HorizontalOptions="Start"
-                                            Text="Color: "
-                                            TextColor="Black"
-                                            VerticalOptions="Center" />
-
-                                        <Label
-                                            Grid.Column="2"
-                                            Margin="0,40,0,0"
-                                            FontAttributes="Bold"
-                                            FontSize="12"
-                                            HorizontalOptions="Start"
-                                            Text="{Binding Product.Color}"
-                                            TextColor="Black"
-                                            VerticalOptions="Center" />
-
-                                        <Label
-                                            Grid.Column="1"
-                                            Margin="0,80,0,0"
-                                            FontAttributes="Bold"
-                                            FontSize="12"
-                                            HorizontalOptions="Start"
-                                            Text="Size:"
-                                            TextColor="Black"
-                                            VerticalOptions="Center" />
-
-                                        <Label
-                                            Grid.Column="2"
-                                            Margin="0,80,0,0"
-                                            FontAttributes="Bold"
-                                            FontSize="12"
-                                            HorizontalOptions="Start"
-                                            Text="XL"
-                                            TextColor="Black"
-                                            VerticalOptions="Center" />
-
-                                        <Label
-                                            Grid.Column="1"
-                                            Margin="0,120,0,0"
-                                            FontAttributes="Bold"
-                                            FontSize="12"
-                                            HorizontalOptions="Start"
-                                            Text="Quantity"
-                                            TextColor="Black"
-                                            VerticalOptions="Center" />
-
-                                        <Label
-                                            Grid.Column="2"
-                                            Margin="0,120,0,0"
-                                            FontAttributes="Bold"
-                                            FontSize="12"
-                                            HorizontalOptions="Start"
-                                            Text="{Binding Quantity}"
-                                            TextColor="Black"
-                                            VerticalOptions="Center" />
-
-                                        <Label
-                                            Grid.Column="1"
-                                            Margin="0,160,0,0"
-                                            FontAttributes="Bold"
-                                            FontSize="14"
-                                            HorizontalOptions="Start"
-                                            Text="Total Price"
-                                            TextColor="Black"
-                                            VerticalOptions="Center" />
-
-                                        <Label
-                                            Grid.Column="2"
-                                            Margin="0,160,0,0"
-                                            FontAttributes="Bold"
-                                            FontSize="14"
-                                            HorizontalOptions="Start"
-                                            Text="{Binding Total, StringFormat='{0:F2}'}"
-                                            TextColor="Black"
-                                            VerticalOptions="Center" />
-
-                                    </Grid>
-
-                                </DataTemplate>
-
-                            </CollectionView.ItemTemplate>
-
-                        </CollectionView>
-
-                    </Grid>-->
-
                 </Grid>
 
             </Grid>
@@ -492,43 +343,6 @@
                 HorizontalOptions="Fill"
                 VerticalOptions="Center"
                 Color="Gray" />
-
-            <!--<Label
-                Grid.Row="1"
-                Margin="20,20,0,0"
-                FontAttributes="Bold"
-                FontFamily=""
-                Text="Order Value"
-                TextColor="Gray" />-->
-
-            <!--<Label
-                x:Name="orderValue"
-                Grid.Row="1"
-                Grid.Column="1"
-                Margin="0,20,20,0"
-                FontAttributes="Bold"
-                FontFamily=""
-                HorizontalOptions="End"
-                Text="{Binding CheckOut.Total}"
-                TextColor="Gray" />
-
-            <Label
-                Grid.Row="1"
-                Margin="20,60,0,0"
-                FontAttributes="Bold"
-                FontFamily=""
-                Text="Delivery"
-                TextColor="Gray" />-->
-
-            <!--<Label
-                x:Name="deliverCharges"
-                Grid.Row="1"
-                Grid.Column="1"
-                Margin="0,60,20,0"
-                FontAttributes="Bold"
-                FontFamily=""
-                HorizontalOptions="End"
-                TextColor="Gray" />-->
 
             <BoxView
                 Grid.Row="1"

@@ -125,7 +125,7 @@
                     FontFamily=""
                     FontSize="15"
                     HorizontalOptions="Center"
-                    Text="Sing in"
+                    Text="Sign in"
                     TextColor="White"
                     VerticalOptions="Center"
                     WidthRequest="350" />

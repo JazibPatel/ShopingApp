@@ -47,6 +47,19 @@ public partial class CheckOutPage : ContentPage
 
     private async void OrderPlaced(object sender, EventArgs e)
     {
+        if (
+            string.IsNullOrWhiteSpace(firstname.Text)
+            || string.IsNullOrWhiteSpace(lastname.Text)
+            || string.IsNullOrWhiteSpace(phone.Text)
+            || string.IsNullOrWhiteSpace(address.Text)
+            || string.IsNullOrWhiteSpace(postelcode.Text)
+            || string.IsNullOrWhiteSpace(email.Text)
+            || string.IsNullOrWhiteSpace(city.Text)
+        ) {
+            await Application.Current.MainPage.DisplayAlert("Error", "Fill Complete Form", "ok");
+            return;
+        }
+
         foreach (var item in CheckOutList.checkouts)
         {
             var newOrder = new Order
