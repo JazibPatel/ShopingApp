@@ -11,7 +11,7 @@ public partial class ProductPage : ContentPage
 	{
 		InitializeComponent();
 		NavigationPage.SetHasNavigationBar(this, false);
-		BindingContext = new ProductPageViewModel(category, false);
+		BindingContext = new ProductPageViewModel(category, isSearch);
 
     }
 
